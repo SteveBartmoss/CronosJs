@@ -14,7 +14,7 @@ console.log(dateNow.getFullYear())
 
 console.log(dateNow.getMonth())
 
-export function getDateNow() {
+export function getDateNow(formatDate) {
   let dateNow = new Date()
 
   let days=''
@@ -30,6 +30,13 @@ export function getDateNow() {
     month=dateNow.getMonth()+1
   }
 
-  return `${days}/${month}/${dateNow.getFullYear()}`
+  switch (formatDate) {
+    case "ISO":
+      return `${dateNow.getFullYear()}-${month}-${days}`
+
+    case "EUR":
+      return `${days}/${month}/${dateNow.getFullYear()}`
+
+  }
 
 }
