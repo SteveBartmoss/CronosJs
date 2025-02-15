@@ -54,3 +54,11 @@ export function getDifference(firsDate,secondDate){
     return Math.round(diference)
 
 }
+
+export function addDays(date, days){
+    let objDate = new Date(date)
+
+    let newDate = new Date(objDate.getDate + (days*24*60*60*1000))
+
+    return date.toLocaleDateString()
+}
