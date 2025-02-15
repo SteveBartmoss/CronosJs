@@ -2,6 +2,10 @@
 
 export function getDateNow(formatDate) {
 
+    if(typeof formatDate !== "string"){
+        throw new Error('formatDate must be a string')
+    }
+
     const dateNow = new Date()
 
     function pad(number){
@@ -9,10 +13,11 @@ export function getDateNow(formatDate) {
     }
 
     const days = pad(dateNow.getDate())
-    const month = pad(dateNow.getMonth())
+    const month = pad(dateNow.getMonth()+1)
     const hours = pad(dateNow.getHours())
     const minutes = pad(dateNow.getMinutes())
     const seconds = pad(dateNow.getSeconds())
+    const timezoneOffset = -dateNow.getTimezoneOffset() / 60
 
     switch (formatDate) {
         case "ISO":
@@ -24,7 +29,7 @@ export function getDateNow(formatDate) {
         case "USA":
             return `${month}/${days}/${dateNow.getFullYear()}`;
         case "SQL": 
-            return `${dateNow.getFullYear()}-${month}-${days} ${hours}:${minutes}:${seconds}`
+            return `${dateNow.getFullYear()}-${month}-${days} ${hours}:${minutes}:${seconds} ${timezoneOffset >= 0 ? '+':'-'}${pad(timezoneOffset)}:00`
 
         default: 
             return dateNow.toLocaleDateString()
