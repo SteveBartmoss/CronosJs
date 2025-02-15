@@ -33,3 +33,15 @@ export function getDateNow(formatDate) {
     }
 
 }
+
+export function getDiference(firsDate,secondDate){
+    const startDate = new Date(firsDate)
+    const endDate = new Date(secondDate)
+
+    let diference = endDate - startDate
+
+    diference = diference / (1000 * 60 * 60 * 24)
+
+    return diference
+
+}
