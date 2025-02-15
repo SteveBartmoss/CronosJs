@@ -62,3 +62,26 @@ export function addDays(date, days){
 
     return date.toLocaleDateString()
 }
+
+
+export function getDayReference(date){
+    const objDate = new Date(date)
+
+    switch(objDate.getDay()){
+        case 0:
+            return 'Sunday'
+        case 1:
+            return 'Monday'
+        case 2: 
+            return 'Thusday'
+        case 3:
+            return 'Wednesday'
+        case 4:
+            return 'Thursday'
+        case 5: 
+            return 'Friday'
+        case 6: 
+            return 'Saturday'
+    }
+    
+}
