@@ -38,10 +38,14 @@ export function getDiference(firsDate,secondDate){
     const startDate = new Date(firsDate)
     const endDate = new Date(secondDate)
 
+    if(isNaN(startDate)||isNaN(endDate)){
+        throw new Error("Invalid date")
+    }
+
     let diference = endDate - startDate
 
     diference = diference / (1000 * 60 * 60 * 24)
 
-    return diference
+    return Math.round(diference)
 
 }
