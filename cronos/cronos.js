@@ -89,3 +89,7 @@ export function getDayReference(date,language='es'){
     }
 
 }
+
+export function isValidDate(date){
+    return !isNaN(new Date(date))
+}
