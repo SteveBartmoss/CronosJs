@@ -29,7 +29,7 @@ export function getDateNow(formatDate) {
         case "USA":
             return `${month}/${days}/${dateNow.getFullYear()}`;
         case "SQL": 
-            return `${dateNow.getFullYear()}-${month}-${days} ${hours}:${minutes}:${seconds} ${timezoneOffset >= 0 ? '+':'-'}${pad(timezoneOffset)}:00`
+            return `${dateNow.getFullYear()}-${month}-${days} ${hours}:${minutes}:${seconds} ${timezoneOffset >= 0 ? '+' : '-'}${pad(timezoneOffset)}:00`
 
         default: 
             return dateNow.toLocaleDateString()
@@ -39,7 +39,7 @@ export function getDateNow(formatDate) {
 
 }
 
-export function getDiference(firsDate,secondDate){
+export function getDifference(firsDate,secondDate){
     const startDate = new Date(firsDate)
     const endDate = new Date(secondDate)
 
