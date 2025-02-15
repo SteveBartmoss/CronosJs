@@ -93,3 +93,8 @@ export function getDayReference(date,language='es'){
 export function isValidDate(date){
     return !isNaN(new Date(date))
 }
+
+export function getFirstDayOfMonth(date){
+    const objDate = new Date(date)
+    return new Date(objDate.getFullYear(),objDate.getMonth(),1)
+}
