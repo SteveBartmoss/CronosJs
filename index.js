@@ -37,6 +37,9 @@ export function getDateNow(formatDate) {
     case "EUR":
       return `${days}/${month}/${dateNow.getFullYear()}`
 
+    case "USA":
+        return `${month}/${days}/${dateNow.getFullYear()}`;
+
   }
 
 }
