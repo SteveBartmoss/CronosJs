@@ -68,24 +68,24 @@ export function addDays(date, days){
 }
 
 
-export function getDayReference(date){
+export function getDayReference(date,language='es'){
     const objDate = new Date(date)
 
-    switch(objDate.getDay()){
-        case 0:
-            return 'Sunday'
-        case 1:
-            return 'Monday'
-        case 2: 
-            return 'Thusday'
-        case 3:
-            return 'Wednesday'
-        case 4:
-            return 'Thursday'
-        case 5: 
-            return 'Friday'
-        case 6: 
-            return 'Saturday'
+    if(isNaN(objDate)){
+        throw new Error("Invalid date")
+    }
+
+    const days = {
+        en: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+        es: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado']
+    }
+
+    const dayIndex = objDate.getDate()
+
+    if(days[language]){
+        return days[language][dayIndex]
+    }else{
+        throw new Error('Language not soported')
     }
 
 }
