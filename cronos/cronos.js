@@ -58,9 +58,13 @@ export function getDifference(firsDate,secondDate){
 export function addDays(date, days){
     let objDate = new Date(date)
 
-    let newDate = new Date(objDate.getDate + (days*24*60*60*1000))
+    if(isNaN(objDate)){
+        throw new Error("Invalid date")
+    }
 
-    return date.toLocaleDateString()
+    let newDate = new Date(objDate.getTime() + (days*24*60*60*1000))
+
+    return newDate.toLocaleDateString()
 }
 
 
@@ -83,5 +87,5 @@ export function getDayReference(date){
         case 6: 
             return 'Saturday'
     }
-    
+
 }
