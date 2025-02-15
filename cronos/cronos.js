@@ -98,3 +98,8 @@ export function getFirstDayOfMonth(date){
     const objDate = new Date(date)
     return new Date(objDate.getFullYear(),objDate.getMonth(),1)
 }
+
+export function getLastDayOfMonth(date){
+    const objeDate = new Date(date)
+    return new Date(objDate.getFullYear(), objeDate.getMonth()+1,0)
+}
