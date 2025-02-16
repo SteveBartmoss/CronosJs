@@ -174,3 +174,10 @@ export function getUnitDifference(startDate, endDate, unit){
 export function isLeapYear(year){
     return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0
 }
+
+export function toTimestamp(date,unit){
+    const objDate = new Date(date)
+    const timestamp = objDate.getTime()
+
+    return unit === 'seconds' ? Math.floor(timestamp / 1000) : timestamp 
+}
