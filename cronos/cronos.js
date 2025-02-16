@@ -47,9 +47,9 @@ export function getDifference(firsDate,secondDate){
         throw new Error("Invalid date")
     }
 
-    let diference = endDate - startDate
+    let difference = endDate - startDate
 
-    diference = diference / (1000 * 60 * 60 * 24)
+    difference = difference / (1000 * 60 * 60 * 24)
 
     return Math.round(diference)
 
