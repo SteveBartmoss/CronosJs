@@ -140,4 +140,12 @@ export function formatDate(date, format="DD-MM-YYYY"){
     const pad = (number) => (number < 10 ? "0"+number : number)
 
     return format.replace("DD",pad(day)).replace("MM",pad(month)).replace("YYYY",pad(year))
-} 
+}
+
+export function addMonths(date,months){
+    const objDate = new Date(date)
+
+    objDate.setMonth(objDate.getMonth()+months)
+
+    return objDate
+}
