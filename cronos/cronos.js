@@ -71,7 +71,7 @@ export function addDays(date, days){
 export function getDayReference(date,language='es'){
     const objDate = new Date(date)
 
-    if(isNaN(objDate)){
+    if(isNaN(objDate.getTime())){
         throw new Error("Invalid date")
     }
 
