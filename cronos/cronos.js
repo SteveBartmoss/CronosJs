@@ -170,3 +170,7 @@ export function getUnitDifference(startDate, endDate, unit){
             throw new Error('Unit not supported')
     }
 }
+
+export function isLeapYear(year){
+    return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0
+}
