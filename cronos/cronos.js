@@ -80,7 +80,7 @@ export function getDayReference(date,language='es'){
         es: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado']
     }
 
-    const dayIndex = objDate.getDate()
+    const dayIndex = objDate.getDay()
 
     if(days[language]){
         return days[language][dayIndex]
@@ -110,6 +110,6 @@ export function getLastDayOfMonth(date){
     if(isNaN(objeDate)){
         throw new Error("Invalid date")
     }
-    
+
     return new Date(objDate.getFullYear(), objeDate.getMonth()+1,0)
 }
