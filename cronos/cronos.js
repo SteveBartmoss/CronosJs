@@ -97,7 +97,7 @@ export function isValidDate(date){
 export function getFirstDayOfMonth(date){
     const objDate = new Date(date)
 
-    if(isNaN(objDate)){
+    if(isNaN(objDate.getTime())){
         throw new Error("Invalid date")
     }
 
