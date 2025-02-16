@@ -149,3 +149,24 @@ export function addMonths(date,months){
 
     return objDate
 }
+
+export function getUnitDifference(startDate, endDate, unit){
+
+    const start = new Date(startDate)
+    const end = new Date(endDate)
+
+    const difference = end - start
+
+    switch (unit){
+        case 'days':
+            return Math.floor(difference/(1000*60*60*24))
+        case 'hours': 
+            return Math.floor(difference/(1000*60*60))
+        case 'minutes':
+            return Math.floor(difference/(1000*60))
+        case 'seconds':
+            return Math.floor(difference/1000)
+        default: 
+            throw new Error('Unit not supported')
+    }
+}
