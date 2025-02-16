@@ -113,3 +113,18 @@ export function getLastDayOfMonth(date){
 
     return new Date(objDate.getFullYear(), objDate.getMonth()+1,0)
 }
+
+export function calculateAge(birthDate){
+    const today = new Date()
+    const birth = new Date(birthDate)
+
+    let age = today.getFullYear() - birthDate.getFullYear()
+
+    const monthDifference = today.getMonth() - birth.getMonth()
+
+    if(monthDifference<0||(monthDifference === 0 && today.getDate()<birth.getDate())){
+        age --
+    }
+
+    return age
+}
