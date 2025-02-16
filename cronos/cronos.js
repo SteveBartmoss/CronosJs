@@ -27,9 +27,9 @@ export function getDateNow(formatDate) {
             return `${days}/${month}/${dateNow.getFullYear()}`
 
         case "USA":
-            return `${month}/${days}/${dateNow.getFullYear()}`;
-        case "SQL": 
-            return `${dateNow.getFullYear()}-${month}-${days} ${hours}:${minutes}:${seconds} ${timezoneOffset >= 0 ? '+' : '-'}${pad(timezoneOffset)}:00`
+            return `${month}/${days}/${dateNow.getFullYear()}`
+        case "SQL":
+            return `${dateNow.getFullYear()}-${month}-${days} ${hours}:${minutes}:${seconds}`
 
         default: 
             return dateNow.toLocaleDateString()
