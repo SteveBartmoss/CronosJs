@@ -128,3 +128,16 @@ export function calculateAge(birthDate){
 
     return age
 }
+
+export function formatDate(date, format="DD-MM-YYYY"){
+    
+    const objDate = new Date(date)
+
+    const day = objDate.getDate()
+    const month = objDate.getMonth()+1
+    const year = objDate.getFullYear()
+
+    const pad = (number) => (number < 10 ? "0"+number : number)
+
+    return format.replace("DD",pad(day)).replace("MM",pad(month)).replace("YYYY",pad(year))
+} 
