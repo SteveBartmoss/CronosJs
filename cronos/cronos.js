@@ -85,7 +85,7 @@ export function getDayReference(date,language='es'){
     if(days[language]){
         return days[language][dayIndex]
     }else{
-        throw new Error('Language not soported')
+        throw new Error('Language not supported')
     }
 
 }
