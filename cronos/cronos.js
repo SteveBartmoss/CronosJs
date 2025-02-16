@@ -105,11 +105,11 @@ export function getFirstDayOfMonth(date){
 }
 
 export function getLastDayOfMonth(date){
-    const objeDate = new Date(date)
+    const objDate = new Date(date)
 
-    if(isNaN(objeDate)){
+    if(isNaN(objDate)){
         throw new Error("Invalid date")
     }
 
-    return new Date(objDate.getFullYear(), objeDate.getMonth()+1,0)
+    return new Date(objDate.getFullYear(), objDate.getMonth()+1,0)
 }
