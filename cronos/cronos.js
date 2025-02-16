@@ -43,7 +43,7 @@ export function getDifference(firsDate,secondDate){
     const startDate = new Date(firsDate)
     const endDate = new Date(secondDate)
 
-    if(isNaN(startDate)||isNaN(endDate)){
+    if(isNaN(startDate.getTime())||isNaN(endDate.getDate())){
         throw new Error("Invalid date")
     }
 
