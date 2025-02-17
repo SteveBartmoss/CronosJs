@@ -190,3 +190,18 @@ export function compareDates(date1,date2){
     if(d1<d2) return -1
     return 0
 }
+
+export function getMonthName(date, language){
+    const objDate = new Date(date)
+
+    const months = {
+        en: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+        es: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
+    }
+
+    if(months[language]){
+        return months[language][objDate.getMonth()]
+    }else{
+        throw new Error("Language not supported")
+    }
+}
