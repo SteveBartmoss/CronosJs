@@ -205,3 +205,11 @@ export function getMonthName(date, language){
         throw new Error("Language not supported")
     }
 }
+
+export function isDateInRange(date,startDate,endDate){
+    const objDate = new Date(date)
+    const start = new Date(startDate)
+    const end = new Date(endDate)
+
+    return objDate >= start && objDate <= end
+}
