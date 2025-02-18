@@ -213,3 +213,14 @@ export function isDateInRange(date,startDate,endDate){
 
     return objDate >= start && objDate <= end
 }
+
+export function getWeekRange(date){
+    const objDate = new Date(date)
+    const startOfWeek = new Date(objDate)
+    startOfWeek.setDate(objDate.getDate()-objDate.getDate()+1)
+    const endOfWeek = new Date(startOfWeek)
+    endOfWeek.setDate(startOfWeek.getDate()+6)
+
+    return { startOfWeek, endOfWeek}
+    
+}
