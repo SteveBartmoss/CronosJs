@@ -118,6 +118,13 @@ export function calculateAge(birthDate){
     const today = new Date()
     const birth = new Date(birthDate)
 
+    if(isNaN(today.getTime())){
+        throw new Error("Invalid date")
+    }
+    if(isNaN(birth.getTime())){
+        throw new Error("Invalid date")
+    }
+
     let age = today.getFullYear() - birthDate.getFullYear()
 
     const monthDifference = today.getMonth() - birth.getMonth()
