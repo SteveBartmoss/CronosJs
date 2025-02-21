@@ -140,6 +140,10 @@ export function formatDate(date, format="DD-MM-YYYY"){
     
     const objDate = new Date(date)
 
+    if(isNaN(objDate.getTime())){
+        throw new Error("Invalid date")
+    }
+
     const day = objDate.getDate()
     const month = objDate.getMonth()+1
     const year = objDate.getFullYear()
