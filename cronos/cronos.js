@@ -170,6 +170,10 @@ export function getUnitDifference(startDate, endDate, unit){
     const start = new Date(startDate)
     const end = new Date(endDate)
 
+    if(isNaN(start.getTime())||isNaN(end.getTime())){
+        throw new Error("Invalid date")
+    }
+
     const difference = end - start
 
     switch (unit){
