@@ -196,6 +196,11 @@ export function isLeapYear(year){
 
 export function toTimestamp(date,unit){
     const objDate = new Date(date)
+
+    if(isNaN(objDate.getTime())){
+        throw new Error("Invalid date")
+    }
+
     const timestamp = objDate.getTime()
 
     return unit === 'seconds' ? Math.floor(timestamp / 1000) : timestamp 
