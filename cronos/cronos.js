@@ -156,6 +156,10 @@ export function formatDate(date, format="DD-MM-YYYY"){
 export function addMonths(date,months){
     const objDate = new Date(date)
 
+    if(isNaN(objDate.getTime())){
+        throw new Error("Invalid date")
+    }
+
     objDate.setMonth(objDate.getMonth()+months)
 
     return objDate
