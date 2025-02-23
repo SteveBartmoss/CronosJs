@@ -222,6 +222,10 @@ export function compareDates(date1,date2){
 export function getMonthName(date, language){
     const objDate = new Date(date)
 
+    if(isNaN(objDate.getTime())){
+        throw new Error("Invalid date")
+    }
+
     const months = {
         en: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
         es: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
