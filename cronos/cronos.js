@@ -159,7 +159,12 @@ export function addMonths(date,months){
         throw new Error("Invalid date")
     }
 
+    const day = objDate.getDate()
     objDate.setMonth(objDate.getMonth()+months)
+
+    if(objDate.getDate !== day){
+        objDate.setDate(0)
+    }
 
     return objDate
 }
