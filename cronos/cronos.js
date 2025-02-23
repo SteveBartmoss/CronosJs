@@ -257,10 +257,17 @@ export function getWeekRange(date){
         throw new Error("invalid date")
     }
 
+    const dayOfWeek = objDate.getDay()
+
+    const diffToMonday = dayOfWeek === 0 ? -6 : 1 - dayOfWeek
+
     const startOfWeek = new Date(objDate)
-    startOfWeek.setDate(objDate.getDate()-objDate.getDate()+1)
+    startOfWeek.setDate(objDate.getDate()+diffToMonday)
+    startOfWeek.setHours(0,0,0,0)
+
     const endOfWeek = new Date(startOfWeek)
     endOfWeek.setDate(startOfWeek.getDate()+6)
+    endOfWeek.setHours(23,59,59,999)
 
     return { startOfWeek, endOfWeek}
 
