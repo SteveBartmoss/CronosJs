@@ -124,13 +124,15 @@ export function calculateAge(birthDate){
 
     let age = today.getFullYear() - birth.getFullYear()
 
-    const monthDifference = today.getMonth() - birth.getMonth()
+    const hasBirthdayPassed = 
+        today.getMonth() > birth.getMonth() || 
+        (today.getMonth() === birth.getMonth() && today.getDate() >= birth.getDate())
 
-    if(monthDifference<0||(monthDifference === 0 && today.getDate()<birth.getDate())){
-        age --
+    if (!hasBirthdayPassed) {
+        age--;
     }
-
-    return age
+    
+    return age;
 }
 
 export function formatDate(date, format="DD-MM-YYYY"){
