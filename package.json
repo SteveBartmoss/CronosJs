@@ -1,6 +1,6 @@
 {
   "name": "cronosjs",
-  "version": "0.7.1",
+  "version": "1.0.0",
   "description": "Libreria para trabajar con fechas",
   "main": "index.js",
   "type": "module",
@@ -8,7 +8,7 @@
     "test": "jest"
   },
   "author": "Steve",
-  "license": "ISC",
+  "license": "GPL-3.0",
   "dependencies": {
     "@babel/preset-env": "^7.26.9",
     "babel-jest": "^29.7.0",
