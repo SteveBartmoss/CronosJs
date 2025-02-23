@@ -243,6 +243,10 @@ export function isDateInRange(date,startDate,endDate){
     const start = new Date(startDate)
     const end = new Date(endDate)
 
+    if(isNaN(objDate.getTime())||isNaN(start.getTime())||isNaN(end.getTime())){
+        throw new Error("Invalid date")
+    }
+
     return objDate >= start && objDate <= end
 }
 
