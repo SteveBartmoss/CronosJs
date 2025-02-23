@@ -51,7 +51,7 @@ export function getDifference(firsDate,secondDate){
 
     difference = difference / (1000 * 60 * 60 * 24)
 
-    return Math.round(diference)
+    return Math.round(difference)
 
 }
 
@@ -256,7 +256,7 @@ export function getWeekRange(date){
     if(isNaN(objDate.getTime())){
         throw new Error("invalid date")
     }
-    
+
     const startOfWeek = new Date(objDate)
     startOfWeek.setDate(objDate.getDate()-objDate.getDate()+1)
     const endOfWeek = new Date(startOfWeek)
