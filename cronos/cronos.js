@@ -252,6 +252,11 @@ export function isDateInRange(date,startDate,endDate){
 
 export function getWeekRange(date){
     const objDate = new Date(date)
+
+    if(isNaN(objDate.getTime())){
+        throw new Error("invalid date")
+    }
+    
     const startOfWeek = new Date(objDate)
     startOfWeek.setDate(objDate.getDate()-objDate.getDate()+1)
     const endOfWeek = new Date(startOfWeek)
