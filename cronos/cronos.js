@@ -266,12 +266,10 @@ export function getWeekRange(date){
     const diffToMonday = dayOfWeek === 0 ? -6 : 1 - dayOfWeek
 
     const startOfWeek = new Date(objDate)
-    startOfWeek.setDate(objDate.getDate()+diffToMonday)
-    startOfWeek.setHours(0,0,0,0)
+    startOfWeek.setUTCDate(startOfWeek.getUTCDate() + diffToMonday)
 
     const endOfWeek = new Date(startOfWeek)
-    endOfWeek.setDate(startOfWeek.getDate()+6)
-    endOfWeek.setHours(23,59,59,999)
+    endOfWeek.setUTCDate(startOfWeek.getUTCDate() + 6)
 
     return { startOfWeek, endOfWeek}
 
