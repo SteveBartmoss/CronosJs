@@ -223,23 +223,14 @@ export function compareDates(date1,date2){
     return 0
 }
 
-export function getMonthName(date, language){
+export function getMonthName(date, language='es'){
     const objDate = new Date(date)
 
     if(isNaN(objDate.getTime())){
         throw new Error("Invalid date")
     }
 
-    const months = {
-        en: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
-        es: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
-    }
-
-    if(months[language]){
-        return months[language][objDate.getMonth()]
-    }else{
-        throw new Error("Language not supported")
-    }
+    return new Intl.DateTimeFormat(language, {month: "long"}).format(objDate)
 }
 
 export function isDateInRange(date,startDate,endDate){
