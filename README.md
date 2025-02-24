@@ -21,3 +21,7 @@ Toma una fecha y un numero de dias, a la fecha le suma el numero de dias que se 
 ### getDayReference
 
 Toma una fecha y un lenguaje y devuelve el nombre del dia que representa la semana, los lenguajes con soporte actual es (en,es)
+
+### isValidDate
+
+Toma una fecha y devuelve true si es una fecha valida de lo contrario devuelve false
