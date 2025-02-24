@@ -45,3 +45,7 @@ recibe una fehca y el formato deseado, devuelve la fecha con el formato que se i
 ### addMonths 
 
 recibe una fecha y un numero de meses, devuelve la fecha con la suma de los meses que se pasaron
+
+### getUnitDiference
+
+recibe dos fechas y una unidad, devuelve la diferencia entre las dos fechas en la unidad que se envia
