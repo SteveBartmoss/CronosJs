@@ -13,3 +13,7 @@ Devuele la fecha actual en diferentes formatos, por ahora los formatos aceptados
 ### getDiference
 
 Toma dos fechas y retorna la diferencias de dos fechas, tomando la segunda fecha y restandole la primera con lo cual se regresa la diferencia en dias
+
+### addDays 
+
+Toma una fecha y un numero de dias, a la fecha le suma el numero de dias que se pasa como parametro
