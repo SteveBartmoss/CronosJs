@@ -29,3 +29,7 @@ Toma una fecha y devuelve true si es una fecha valida de lo contrario devuelve f
 ### getFirstDayOfMonth 
 
 recibe una fecha y devuelve el primer dia de esa fecha
+
+### getLastDayOfMonth
+
+recibe una fecha y devuelve el ultimo dia de esa fecha
