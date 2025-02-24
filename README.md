@@ -33,3 +33,7 @@ recibe una fecha y devuelve el primer dia de esa fecha
 ### getLastDayOfMonth
 
 recibe una fecha y devuelve el ultimo dia de esa fecha
+
+### calculateAge
+
+recibe una fecha de nacimiento y devuelve la edad que corresponde a esa fecha
