@@ -41,3 +41,7 @@ recibe una fecha de nacimiento y devuelve la edad que corresponde a esa fecha
 ### formatDate
 
 recibe una fehca y el formato deseado, devuelve la fecha con el formato que se indico
+
+### addMonths 
+
+recibe una fecha y un numero de meses, devuelve la fecha con la suma de los meses que se pasaron
