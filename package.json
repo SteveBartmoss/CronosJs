@@ -9,6 +9,10 @@
   },
   "author": "Steve",
   "license": "GPL-3.0",
+  "repository":{
+    "type": "git",
+    "url": "https://github.com/SteveBartmoss/CronosJs"
+  },
   "dependencies": {
     "@babel/preset-env": "^7.26.9",
     "babel-jest": "^29.7.0",
