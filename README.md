@@ -25,3 +25,7 @@ Toma una fecha y un lenguaje y devuelve el nombre del dia que representa la sema
 ### isValidDate
 
 Toma una fecha y devuelve true si es una fecha valida de lo contrario devuelve false
+
+### getFirstDayOfMonth 
+
+recibe una fecha y devuelve el primer dia de esa fecha
