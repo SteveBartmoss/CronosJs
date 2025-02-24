@@ -17,3 +17,7 @@ Toma dos fechas y retorna la diferencias de dos fechas, tomando la segunda fecha
 ### addDays 
 
 Toma una fecha y un numero de dias, a la fecha le suma el numero de dias que se pasa como parametro
+
+### getDayReference
+
+Toma una fecha y un lenguaje y devuelve el nombre del dia que representa la semana, los lenguajes con soporte actual es (en,es)
