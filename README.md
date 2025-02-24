@@ -37,3 +37,7 @@ recibe una fecha y devuelve el ultimo dia de esa fecha
 ### calculateAge
 
 recibe una fecha de nacimiento y devuelve la edad que corresponde a esa fecha
+
+### formatDate
+
+recibe una fehca y el formato deseado, devuelve la fecha con el formato que se indico
