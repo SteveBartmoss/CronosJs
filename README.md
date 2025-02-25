@@ -61,3 +61,7 @@ recibe una fecha y una unidad de tiempo, la pasa al formato de la unidas que tom
 ### compareDates
 
 recibe dos fechas y compara la primer fecha con la segunda, si la primer fecha es mmayor que la segunda retorna 1, de lo contrario retorna -1 y si son iguales retorna 0
+
+### getMonthName 
+
+recibe una fecha y un lenguaje, retorna el nombre del mes que corresponde a la fecha que se pasa como parametro
