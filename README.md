@@ -53,3 +53,7 @@ recibe dos fechas y una unidad, devuelve la diferencia entre las dos fechas en l
 ### isLeapyear
 
 recibe un anio numerico y retorna true si el anio es biciesto o de lo cotrario retorna false
+
+### toTimestamp
+
+recibe una fecha y una unidad de tiempo, la pasa al formato de la unidas que toma como argumento
