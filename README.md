@@ -69,3 +69,7 @@ recibe una fecha y un lenguaje, retorna el nombre del mes que corresponde a la f
 ### isDateInRange
 
 recibe tres fechas, la fecha de inicio, la fecha de fin y la fecha que se buscara entre la fecha de inicio y de fin, regresa si la fecha esta dentro del rango
+
+### getWeekRange
+
+recibe una fecha y regresa el inicio de semana de esa fecha y el fin de semana de esa fecha
