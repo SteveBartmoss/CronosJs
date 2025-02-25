@@ -1,4 +1,31 @@
+//prototipo para normalizacion de las fechas
 
+function normalizeDate(date){
+    if(date.includes("/")){
+      const parts = date.split('/')
+      if(parts.length === 3){
+        const [day, month, year] = parts
+        refactorDate = `${year}-${month}-${day}`
+  
+        if(isNaN(new Date(refactorDate).getTime())){
+          refactorDate = `${year}-${day}-${month}`
+        }
+        
+        return refactorDate
+      }
+    }else if(date.includes("-")){
+      const parts = date.split('-')
+      if(parts.length === 3){
+        const [day, month, year ] = parts
+        refactorDate = `${year}-${month}-${day}`
+        if(isNaN(new Date(refactorDate).getTime())){
+          refactorDate = `${year}-${day}-${month}`
+        } 
+        return refactorDate
+      }
+    }
+  }
+  
 
 export function getDateNow(formatDate) {
 
