@@ -65,3 +65,7 @@ recibe dos fechas y compara la primer fecha con la segunda, si la primer fecha e
 ### getMonthName 
 
 recibe una fecha y un lenguaje, retorna el nombre del mes que corresponde a la fecha que se pasa como parametro
+
+### isDateInRange
+
+recibe tres fechas, la fecha de inicio, la fecha de fin y la fecha que se buscara entre la fecha de inicio y de fin, regresa si la fecha esta dentro del rango
