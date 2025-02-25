@@ -49,3 +49,7 @@ recibe una fecha y un numero de meses, devuelve la fecha con la suma de los mese
 ### getUnitDiference
 
 recibe dos fechas y una unidad, devuelve la diferencia entre las dos fechas en la unidad que se envia
+
+### isLeapyear
+
+recibe un anio numerico y retorna true si el anio es biciesto o de lo cotrario retorna false
