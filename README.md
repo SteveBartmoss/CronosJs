@@ -73,3 +73,7 @@ recibe tres fechas, la fecha de inicio, la fecha de fin y la fecha que se buscar
 ### getWeekRange
 
 recibe una fecha y regresa el inicio de semana de esa fecha y el fin de semana de esa fecha
+
+### timestampToDate 
+
+recibe un timestamp y una unidad, devuelve una fecha tomando el timestamp y transformandola a la unidad que se paso
