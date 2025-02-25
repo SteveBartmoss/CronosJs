@@ -1,33 +1,66 @@
 //prototipo para normalizacion de las fechas
 
-function normalizeDate(date){
+function normalizeDate(date,format=null){
 
     if(typeof date !== "string"){
       throw new Error("date must be a string")
     }
   
-    if(date.includes("-")||idate.includes("/")){
-  
-      const parts = date.split(/[-\/]/)
-  
-      if(parts.length === 3){
-        const [day, month, year] = parts
-        refactorDate = `${year}-${month}-${day}`
-  
-        if(isNaN(new Date(refactorDate).getTime())){
-          refactorDate = `${year}-${day}-${month}`
-  
-          if(isNaN(new Date(refactorDate).getTime())){
-            throw new Error("Invalid date")
-          }
-  
-        }
-  
-      }
-  
+    const parts = date.split(/[-\/]/)
+
+    if(parts.length !== 3){
+        throw new Error('Invalid date')
     }
-  
-    return refactorDate
+
+    switch(format){
+
+        case 'DD/MM/YYYY':
+            const [day, month, year] = parts
+            return `${year}-${month}-${day}`
+        case 'MM/DD/YYYY':
+            const [month,day,year] = parts
+            return `${year}-${month}-${day}`
+        case 'YYYY/MM/DD':
+            const [year,month,day] = parts
+            return `${year}-${month}-${day}`
+        case 'DD-MM-YYYY':
+            const [day, month, year] = parts
+            return `${year}-${month}-${day}`
+        case 'MM-DD-YYYY':
+            const [month,day,year] = parts
+            return `${year}-${month}-${day}`
+        case 'YYYY-MM-DD':
+            const [year,month,day] = parts
+            return`${year}-${month}-${day}`
+        default 
+            let [a, b, c] = parts.map(Number); // Convertir a números
+
+            let year, month, day;
+
+            // Asumir que el año tiene 4 dígitos
+            if (a > 31) {
+                year = a;
+                [month, day] = b > 12 ? [c, b] : [b, c]; 
+            } else if (c > 31) {
+                year = c;
+                [month, day] = a > 12 ? [b, a] : [a, b];
+            } else {
+                // Caso ambiguo (cuando ninguno es mayor a 31)
+                // Se asume que el primer número es el día
+                year = c;
+                [month, day] = [b, a];
+            }
+
+            // Validar si la fecha final es correcta
+            const refactoredDate = `${year}-${String(month).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+
+            if (isNaN(new Date(refactoredDate).getTime())) {
+                throw new Error("Invalid date");
+            }
+
+            return refactoredDate;
+    }
+
   
 }
   
