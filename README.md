@@ -57,3 +57,7 @@ recibe un anio numerico y retorna true si el anio es biciesto o de lo cotrario r
 ### toTimestamp
 
 recibe una fecha y una unidad de tiempo, la pasa al formato de la unidas que toma como argumento
+
+### compareDates
+
+recibe dos fechas y compara la primer fecha con la segunda, si la primer fecha es mmayor que la segunda retorna 1, de lo contrario retorna -1 y si son iguales retorna 0
