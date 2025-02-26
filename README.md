@@ -134,7 +134,21 @@ true si la fecha es valida de lo contrario false
 
 ### getFirstDayOfMonth 
 
-recibe una fecha y devuelve el primer dia de esa fecha
+recibe una fecha y devuelve el primer dia del mes de esa fecha
+
+```js
+    getFirstDayOfMonth(date)
+```
+### Parametros
+
+**date**
+- Fecha a partir de la cual se regresa el primer dia del mes
+
+recibe una fecha y devuelve el primer dia del mes de esa fecha
+
+### Retorno
+
+Primer dia del mes de la fecha que se envia
 
 ### getLastDayOfMonth
 
