@@ -1,6 +1,6 @@
 {
   "name": "@stevebartmoss/cronosjs",
-  "version": "1.0.1",
+  "version": "1.1.2",
   "description": "Libreria para trabajar con fechas",
   "main": "index.js",
   "type": "module",
