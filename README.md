@@ -80,7 +80,28 @@ La fecha con la suma de los dias
 
 ### getDayReference
 
-Toma una fecha y un lenguaje y devuelve el nombre del dia que representa la semana, los lenguajes con soporte actual es (en,es)
+Toma una fecha y un lenguaje y devuelve el nombre del dia que representa la semana
+
+```js
+    getDayReference(date,language)
+```
+
+### Parametros
+
+**date**
+- Fecha dela cual se obtendra a referencia del dia
+
+**language**
+- El lenguaje en el que se quiere obtener la referencia del dia
+
+**Formatos de lenguaje**
+
+- en
+- es
+
+### Retorno 
+
+La referencia del dia que esta en la fecha proporcionada
 
 ### isValidDate
 
