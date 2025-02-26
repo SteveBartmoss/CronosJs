@@ -60,7 +60,23 @@ Se regresa la diferencia en dias
 
 ### addDays 
 
-Toma una fecha y un numero de dias, a la fecha le suma el numero de dias que se pasa como parametro
+Toma una fecha y un numero de dias, a la fecha le suma el numero de dias
+
+```js
+    addDays(date,days)
+```
+
+### Parametros
+
+**date** 
+- Fecha a la cual se sumaran dias
+
+**days**
+- Numero de dias que se sumaran a la fecha
+
+### Retorno
+
+La fecha con la suma de los dias
 
 ### getDayReference
 
