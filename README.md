@@ -39,7 +39,24 @@ Devuelve la fecha actual en diferentes formatos
 
 ### getDiference
 
-Toma dos fechas y retorna la diferencias de dos fechas, tomando la segunda fecha y restandole la primera con lo cual se regresa la diferencia en dias
+Toma dos fechas y retorna la diferencias de dos fechas el orden de al operacion es  secondDate - firsDate
+
+```js
+    getDiference(firsDate,secondDate)
+```
+
+### Parametros
+
+**firsDate**
+- La fecha que se tomara para la operacion
+
+**firsDate**
+
+- La fecha que se tomara para la operacion
+
+### Retorno
+
+Se regresa la diferencia en dias
 
 ### addDays 
 
