@@ -20,7 +20,22 @@ Estas son algunas de las funcion que se tienen por el momento
 
 ### getDateNow
 
-Devuele la fecha actual en diferentes formatos, por ahora los formatos aceptados son los siguientes: ISO, EUR, USA, SQL
+Devuelve la fecha actual en diferentes formatos
+
+```js
+    getDateNow(formnatDate)
+```
+
+### Parametros
+
+**formatDate** 
+- el formato en el que se quiere la fecha actual, debe ser un string
+
+**Formatos aceptados**
+- ISO
+- EUR
+- USA
+- SQL
 
 ### getDiference
 
