@@ -1,6 +1,6 @@
-# CronosJs
+# CronosJs 1.1.2 (Alfa)
 
-Libreria para manipulas fechas en JavaScript
+Libreria para trabajar con fechas en JavaScript
 
 ### Importante
 
