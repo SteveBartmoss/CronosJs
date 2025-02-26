@@ -105,7 +105,32 @@ La referencia del dia que esta en la fecha proporcionada
 
 ### isValidDate
 
-Toma una fecha y devuelve true si es una fecha valida de lo contrario devuelve false
+Toma una fecha y valida que sea una fecha correcta
+
+```js
+    isValidDate(date,format)
+```
+
+### Parametros
+
+**date**
+- Fecha que sera validada
+
+**format**
+- Formato en el que esta la fecha, si el formato se omite, se hara a mejor aproximancion posible
+
+**Formatos Esperados**
+
+- "DD/MM/YYYY" 
+- "MM/DD/YYYY" 
+- "YYYY/MM/DD" 
+- "DD-MM-YYYY" 
+- "MM-DD-YYYY" 
+- "YYYY-MM-DD"
+
+### Retorno
+
+true si la fecha es valida de lo contrario false
 
 ### getFirstDayOfMonth 
 
