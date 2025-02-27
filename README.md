@@ -229,7 +229,32 @@ La fecha con la suma de los meses especificados
 
 ### getUnitDiference
 
-recibe dos fechas y una unidad, devuelve la diferencia entre las dos fechas en la unidad que se envia
+recibe dos fechas y una unidad, devuelve la diferencia entre las dos fechas en la unidad que se envia, el orden de la operacion es endDate - startDate
+
+```js
+    getUnitDiference(startDate,endDate,unit)
+```
+
+### Parametros
+
+**startDate** 
+- Primera fecha que se tomara para la operacion
+
+**endDate** 
+- Segunda fecha que se tomara para la operacion
+
+**unit** 
+- Tipo de unidad en la que se quiere la diferencia entre las fechas
+
+Las unidades aceptadas son 
+- days
+- hours
+- minutes
+- seconds
+
+### Retorno
+
+La diferencia entre las fechas en la unidad que se en envia
 
 ### isLeapyear
 
