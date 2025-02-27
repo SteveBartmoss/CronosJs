@@ -260,6 +260,19 @@ La diferencia entre las fechas en la unidad que se en envia
 
 recibe un anio numerico y retorna true si el anio es biciesto o de lo cotrario retorna false
 
+```js
+    isLeapyear(year)
+```
+
+### Parametros
+
+**year**
+- Anio que se desa comprovar si es biciesto
+
+### Retorno
+
+true si es biciesto o false si no lo es
+
 ### toTimestamp
 
 recibe una fecha y una unidad de tiempo, la pasa al formato de la unidas que toma como argumento
