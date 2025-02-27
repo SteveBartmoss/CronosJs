@@ -302,7 +302,26 @@ Los segundos o mili segundos que corresponden a la fecha envida
 
 ### compareDates
 
-recibe dos fechas y compara la primer fecha con la segunda, si la primer fecha es mmayor que la segunda retorna 1, de lo contrario retorna -1 y si son iguales retorna 0
+recibe dos fechas y las compara el orden de comparacion es date1 < date2
+
+```js
+    compareDates(date1,date2)
+```
+
+### Parametros 
+
+**date1**
+
+- Primer fecha a comparar
+
+**date2** 
+
+- Segunda fecha a comparar
+
+### Retorno 
+
+si la primer fecha es mayor que la segunda retorna 1, de lo contrario retorna -1 y si las fechas son 
+iguales retorna 0
 
 ### getMonthName 
 
