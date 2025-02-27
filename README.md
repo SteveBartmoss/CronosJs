@@ -277,6 +277,29 @@ true si es biciesto o false si no lo es
 
 recibe una fecha y una unidad de tiempo, la pasa al formato de la unidas que toma como argumento
 
+```js
+    toTimestamp(date,unit)
+```
+
+### Parametros 
+
+**date**
+
+- Fecha que se quiere pasar a un formato de timestamp
+
+**unit** 
+
+- Unidad a la que se desea pasar la fecha
+
+Las unidades disponibles son 
+
+- seconds
+- miliseconds
+
+### Retorno 
+
+Los segundos o mili segundos que corresponden a la fecha envida
+
 ### compareDates
 
 recibe dos fechas y compara la primer fecha con la segunda, si la primer fecha es mmayor que la segunda retorna 1, de lo contrario retorna -1 y si son iguales retorna 0
