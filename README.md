@@ -211,6 +211,22 @@ La fecha con el nuevo formato
 
 recibe una fecha y un numero de meses, devuelve la fecha con la suma de los meses que se pasaron
 
+```js
+    addMonths(date,months)
+```
+
+### Parametros
+
+**date**
+- Fecha a la cual se le sumaran los meses
+
+**months**
+- Numero de meses que se desean sumar a la fecha
+
+### Retorno
+
+La fecha con la suma de los meses especificados
+
 ### getUnitDiference
 
 recibe dos fechas y una unidad, devuelve la diferencia entre las dos fechas en la unidad que se envia
