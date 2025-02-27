@@ -152,7 +152,21 @@ Primer dia del mes de la fecha que se envia
 
 ### getLastDayOfMonth
 
-recibe una fecha y devuelve el ultimo dia de esa fecha
+recibe una fecha y devuelve el ultimo dia del mes de esa fecha
+
+```js
+    getLastDayOfMonth(date)
+```
+
+### Parametros
+
+**date** 
+
+- Fecha a partir de la cual se regresa el ultimo dia del mes
+
+### Retorno
+
+Ultimo dia del mes de la fecha que se envia
 
 ### calculateAge
 
