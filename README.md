@@ -188,7 +188,24 @@ La edad que corresponde a la fecha de nacimiento
 
 ### formatDate
 
-recibe una fehca y el formato deseado, devuelve la fecha con el formato que se indico
+recibe una fecha y el formato deseado, devuelve la fecha con el formato que se indico
+
+```js
+    calculateAge(date,format)
+```
+### Parametros
+
+**date**
+
+- Fecha que se desea formatear
+
+**format**
+
+- Formato en el que se quiere la fecha final
+
+### Retorno
+
+La fecha con el nuevo formato
 
 ### addMonths 
 
