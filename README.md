@@ -172,6 +172,20 @@ Ultimo dia del mes de la fecha que se envia
 
 recibe una fecha de nacimiento y devuelve la edad que corresponde a esa fecha
 
+```js
+    calculateAge(birthDate)
+```
+
+### Parametros
+
+**birthDate**
+
+- Fecha de nacimiento para calcular la edad
+
+### Retorno
+
+La edad que corresponde a la fecha de nacimiento
+
 ### formatDate
 
 recibe una fehca y el formato deseado, devuelve la fecha con el formato que se indico
