@@ -327,6 +327,24 @@ iguales retorna 0
 
 recibe una fecha y un lenguaje, retorna el nombre del mes que corresponde a la fecha que se pasa como parametro
 
+```js
+    getMonthName(date,language)
+```
+
+### Parametros
+
+**date**
+
+- Fecha de la cual se quiere obtener el nombre del mes
+
+**language**
+
+- Idioma en el que se quiere el nombre del mes
+
+### Retorno 
+
+Nombre del mes que corresponde a la fecha que se manda como parametro
+
 ### isDateInRange
 
 recibe tres fechas, la fecha de inicio, la fecha de fin y la fecha que se buscara entre la fecha de inicio y de fin, regresa si la fecha esta dentro del rango
