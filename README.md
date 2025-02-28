@@ -373,7 +373,21 @@ Retorna true si la fecha entra dentro del rango o flase si no esta dentro del ra
 
 ### getWeekRange
 
-recibe una fecha y regresa el inicio de semana de esa fecha y el fin de semana de esa fecha
+Obtener el inicio y el fin de seana de una fecha
+
+```js
+    getWeekRange(date)
+```
+
+### Paramnetros
+
+**date**
+
+- Fecha de la cual se quiere obtener el inicio y fin de de la semana
+
+### Retorno 
+
+Regresa el inicio y fin de semana de la fecha enviada
 
 ### timestampToDate 
 
