@@ -347,7 +347,29 @@ Nombre del mes que corresponde a la fecha que se manda como parametro
 
 ### isDateInRange
 
-recibe tres fechas, la fecha de inicio, la fecha de fin y la fecha que se buscara entre la fecha de inicio y de fin, regresa si la fecha esta dentro del rango
+Comprueba si una fecha esta dentro de un rango, el orden de comparacion es startDate <= date <= endDate
+
+```js
+    isDateInRange(date,startDate,endDate)
+```
+
+### Parametros
+
+**date**
+
+- Fecha que se quiere comprobar si esta dentro del rango
+
+**startDate**
+
+- Fecha inferior del rango
+
+**endDate**
+
+- Fecha superior del rango
+
+### Retorno
+
+Retorna true si la fecha entra dentro del rango o flase si no esta dentro del rango
 
 ### getWeekRange
 
