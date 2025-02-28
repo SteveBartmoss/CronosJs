@@ -392,3 +392,26 @@ Regresa el inicio y fin de semana de la fecha enviada
 ### timestampToDate 
 
 recibe un timestamp y una unidad, devuelve una fecha tomando el timestamp y transformandola a la unidad que se paso
+
+```js
+    timestampToDate(timestamp, unit)
+```
+
+### Parametros
+
+**timestamp**
+
+- Marca de tiempo que se desea transformar a una fecha
+
+**unit**
+
+- Unidad de tiempo en la que esta la marca de tiempo
+
+Las unidades disponibles son 
+
+- seconds
+- miliseconds
+
+### Retorno
+
+Regresa una fecha a partir de la marca de tiempo
