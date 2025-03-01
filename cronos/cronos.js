@@ -244,8 +244,8 @@ export function formatDate(date, format="DD-MM-YYYY",formatFinal){
     return formatFinal.replace("DD",pad(day)).replace("MM",pad(month)).replace("YYYY",pad(year))
 }
 
-export function addMonths(date,months){
-    const objDate = new Date(date)
+export function addMonths(date,format,months){
+    const objDate = new Date(normalizeDate(date,format))
 
     if(isNaN(objDate.getTime())){
         throw new Error("Invalid date")
