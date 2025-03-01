@@ -144,26 +144,6 @@ export function isValidDate(date,format){
     return !isNaN(new Date(normalizeDate(date,format)).getTime())
 }
 
-/*
-notas para la funcion isValidDate
-
-console.log(isValidDate("01-01-2025")) // true
-console.log(isValidDate("01/01/2025")) // true
-console.log(isValidDate("01-30-2025")) // true
-console.log(isValidDate("01/30/2025")) // true
-console.log(isValidDate("28-03-2025")) // false
-console.log(isValidDate("28/03/2025")) // false
-
-  el formato esperado de new Date es YYYY-MM-DD
-  Para otros formatos, como DD-MM-YYYY o DD/MM/YYYY, el comportamiento puede variar dependiendo del navegador o el entorno de ejecución (Node.js).
-  
-  Cuando usas new Date("28-03-2025") o new Date("28/03/2025"), JavaScript no reconoce estos formatos como válidos.
-
-  En muchos casos, el constructor Date interpreta MM-DD-YYYY o MM/DD/YYYY como válidos, pero no DD-MM-YYYY o DD/MM/YYYY.
-
-  se debe implementar una funcion para normalizar las fechas para que sea cual sea el formato que se envia, se convierta al formato YYYY-MM-DD
-*/
-
 export function getFirstDayOfMonth(date){
     const objDate = new Date(date)
 
