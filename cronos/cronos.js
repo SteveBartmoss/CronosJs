@@ -129,7 +129,7 @@ export function addDays(date,format,days){
 
     let newDate = new Date(objDate.getTime() + (days*24*60*60*1000))
 
-    return newDate
+    return formatDate (newDate,format)
 }
 
 
