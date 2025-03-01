@@ -206,9 +206,9 @@ export function getLastDayOfMonth(date,format){
 
 }
 
-export function calculateAge(birthDate){
+export function calculateAge(birthDate,format){
     const today = new Date()
-    const birth = new Date(birthDate)
+    const birth = new Date(normalizeDate(birthDate,format))
 
     if(isNaN(birth.getTime())){
         throw new Error("Invalid date")
