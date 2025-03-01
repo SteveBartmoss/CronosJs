@@ -372,14 +372,15 @@ export function isDateInRange(date,startDate,endDate,dateFormat=null,startFormat
     return objDate >= start && objDate <= end
 }
 
-export function getWeekRange(date){
-    const objDate = new Date(date)
+export function getWeekRange(date,format){
+
+    const objDate = new Date(normalizeDate(date,format))
 
     if(isNaN(objDate.getTime())){
         throw new Error("invalid date")
     }
 
-    const dayOfWeek = objDate.getDay()
+    const dayOfWeek = objDate.getUTCDay()
 
     const diffToMonday = dayOfWeek === 0 ? -6 : 1 - dayOfWeek
 
@@ -389,7 +390,17 @@ export function getWeekRange(date){
     const endOfWeek = new Date(startOfWeek)
     endOfWeek.setUTCDate(startOfWeek.getUTCDate() + 6)
 
-    return { startOfWeek, endOfWeek}
+    const dayStart = startOfWeek.getUTCDate()
+    const monthStart = startOfWeek.getUTCMonth()+1
+    const yearStart = startOfWeek.getUTCFullYear()
+
+    const dayEnd = endOfWeek.getUTCDate()
+    const monthEnd = endOfWeek.getUTCMonth()+1
+    const yearEnd = endOfWeek.getUTCFullYear()
+
+    const pad = (number) => (number < 10 ? "0"+number : number)
+
+    return { startOfWeek: format.replace("DD",pad(dayStart)).replace("MM",pad(monthStart)).replace("YYYY",pad(yearStart)), endOfWeek: format.replace("DD",pad(dayEnd)).replace("MM",pad(monthEnd)).replace("YYYY",pad(yearEnd))}
 
 }
 
