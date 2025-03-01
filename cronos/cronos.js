@@ -123,6 +123,10 @@ export function addDays(date,format,days){
         throw new Error("Invalid date")
     }
 
+    if(isNaN(days)){
+        throw new Error("days must be a number")
+    }
+
     let newDate = new Date(objDate.getTime() + (days*24*60*60*1000))
 
     return newDate
