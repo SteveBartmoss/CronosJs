@@ -1,4 +1,4 @@
-import { addDays, addMonths, calculateAge, formatDate, getDateNow, getDayReference, getDifference, getFirstDayOfMonth, getLastDayOfMonth, getUnitDifference, isValidDate } from "./cronos/cronos.js";
+import { addDays, addMonths, calculateAge, formatDate, getDateNow, getDayReference, getDifference, getFirstDayOfMonth, getLastDayOfMonth, getUnitDifference, isValidDate, toTimestamp } from "./cronos/cronos.js";
 
 //console.log(getDateNow('SQL'))
 
@@ -32,3 +32,5 @@ console.log(addMonths('01/01/2025','DD/MM/YYYY',4))
 
 console.log(getUnitDifference('01/10/2025','05/10/2025','days','DD/MM/YYYY'))
 console.log(getUnitDifference('01/10/2025','05-10-2025','days','DD/MM/YYYY','DD-MM-YYYY'))
+
+console.log(toTimestamp('01/01/2025','DD/MM/YYYY','lalala'))
