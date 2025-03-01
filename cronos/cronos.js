@@ -22,7 +22,7 @@ function normalizeDate(date,format=null){
     }
 
     if (format in formatMap){
-        const [y,m,d] = formatMap[format].map(i => past[i])
+        const [y,m,d] = formatMap[format].map(i => parts[i])
         return `${y}-${m}-${d}`
     }
 
