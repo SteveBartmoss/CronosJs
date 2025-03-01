@@ -186,8 +186,9 @@ export function getFirstDayOfMonth(date,format){
     return format.replace("DD",pad(day)).replace("MM",pad(month)).replace("YYYY",pad(year))
 }
 
-export function getLastDayOfMonth(date){
-    const objDate = new Date(date)
+export function getLastDayOfMonth(date,formart){
+
+    const objDate = new Date(normalizeDate(date,formart))
 
     if(isNaN(objDate.getTime())){
         throw new Error("Invalid date")
