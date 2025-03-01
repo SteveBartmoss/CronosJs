@@ -89,9 +89,19 @@ export function getDateNow(formatDate) {
 
 }
 
-export function getDifference(firsDate,secondDate){
-    const startDate = new Date(firsDate)
-    const endDate = new Date(secondDate)
+export function getDifference(firsDate,secondDate,firstFormat=null,secondFormat=null){
+
+    let startDate
+    let endDate
+
+    if(secondFormat===null){
+        startDate = new Date(normalizeDate(firsDate,firstFormat))
+        endDate = new Date(normalizeDate(secondDate,firstFormat))
+    }
+    else{
+        startDate = new Date(normalizeDate(firsDate,firstFormat))
+        endDate = new Date(normalizeDate(secondDate,secondFormat))
+    }
 
     if(isNaN(startDate.getTime())||isNaN(endDate.getTime())){
         throw new Error("Invalid date")
