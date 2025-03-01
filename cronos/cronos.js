@@ -140,8 +140,9 @@ export function addDays(date,format,days){
 }
 
 
-export function getDayReference(date,language='es'){
-    const objDate = new Date(date)
+export function getDayReference(date,format,language='es'){
+
+    const objDate = new Date(normalizeDate(date,format))
 
     if(isNaN(objDate.getTime())){
         throw new Error("Invalid date")
@@ -152,7 +153,7 @@ export function getDayReference(date,language='es'){
         es: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado']
     }
 
-    const dayIndex = objDate.getDay()
+    const dayIndex = objDate.getUTCDay()
 
     if(days[language]){
         return days[language][dayIndex]
