@@ -1,4 +1,4 @@
-import { addDays, getDateNow, getDayReference, getDifference, getFirstDayOfMonth, isValidDate } from "./cronos/cronos.js";
+import { addDays, getDateNow, getDayReference, getDifference, getFirstDayOfMonth, getLastDayOfMonth, isValidDate } from "./cronos/cronos.js";
 
 //console.log(getDateNow('SQL'))
 
@@ -22,3 +22,4 @@ console.log(getDayReference('28/02/2025','DD/MM/YYYY','es'))
 console.log(getDayReference('01/03/2025','DD/MM/YYYY','es'))
 
 console.log(getFirstDayOfMonth('28/02/2025','DD/MM/YYYY'))
+console.log(getLastDayOfMonth('05/10/2025','DD/MM/YYYY'))
