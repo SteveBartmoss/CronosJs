@@ -359,10 +359,11 @@ export function getMonthName(date,format,language='es'){
     return new Intl.DateTimeFormat(language, {month: "long"}).format(objDate)
 }
 
-export function isDateInRange(date,startDate,endDate){
-    const objDate = new Date(date)
-    const start = new Date(startDate)
-    const end = new Date(endDate)
+export function isDateInRange(date,startDate,endDate,dateFormat=null,startFormat=null,endFormat=null){
+
+    const objDate = new Date(normalizeDate(date,dateFormat))
+    const start = new Date(normalizeDate(startDate,startFormat))
+    const end = new Date(normalizeDate(endDate,endFormat))
 
     if(isNaN(objDate.getTime())||isNaN(start.getTime())||isNaN(end.getTime())){
         throw new Error("Invalid date")
