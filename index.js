@@ -11,3 +11,6 @@ console.log(isValidDate("03-25-2025","MM-DD-YYYY"))
 console.log(isValidDate("03/25/2025","MM/DD/YYYY"))
 console.log(isValidDate("2025/01/01","YYYY/MM/DD"))
 console.log(isValidDate("2025-01-01","YYYY-MM-DD"))
+
+console.log(getDifference('01/10/2025','05/10/2025','DD/MM/YYYY'))
+console.log(getDifference('01/10/2025','05-10-2025','DD/MM/YYYY','DD-MM-YYYY'))
