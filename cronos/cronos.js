@@ -346,12 +346,15 @@ export function compareDates(date1,date2,formatOne=null,formatTwo=null){
     return 0
 }
 
-export function getMonthName(date, language='es'){
-    const objDate = new Date(date)
+export function getMonthName(date,format,language='es'){
+
+    const objDate = new Date(normalizeDate(date,format))
 
     if(isNaN(objDate.getTime())){
         throw new Error("Invalid date")
     }
+
+    objDate.setUTCHours(12)
 
     return new Intl.DateTimeFormat(language, {month: "long"}).format(objDate)
 }
