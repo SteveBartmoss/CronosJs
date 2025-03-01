@@ -415,3 +415,29 @@ Las unidades disponibles son
 ### Retorno
 
 Regresa una fecha a partir de la marca de tiempo
+
+### normalizeDate
+
+Esta funcion es para el uso interno de la liberia, pero puede ser utilizada recibe una fecha y la normaliza al estandar de las fechas javascript YYYY-MM-DD
+
+```js
+    normalizeDate(date,format)
+```
+
+### Parametros
+
+**date**
+
+- Fecha que se quiere normalizar al formato que usa en javascript
+
+**format**
+
+- Formato en el que se envia la fecha que se quiere normalizar, si el formato se omite se trata de hacer la mejor aproximacion a los valores de las fechas
+
+Los formatos aceptados son: 
+- "DD/MM/YYYY" 
+- "MM/DD/YYYY" 
+- "YYYY/MM/DD" 
+- "DD-MM-YYYY" 
+- "MM-DD-YYYY" 
+- "YYYY-MM-DD"
