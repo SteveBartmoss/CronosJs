@@ -405,6 +405,11 @@ export function getWeekRange(date,format){
 }
 
 export function timestampToDate(timestamp, unit){
+
+    if(isNaN(timestamp)){
+        throw new Error('timestamp must be a number')
+    }
+
     const ms = unit === "seconds" ? timestamp * 1000 : timestamp
     return new Date(ms)
 }
