@@ -42,7 +42,7 @@ Devuelve la fecha actual en diferentes formatos
 Toma dos fechas y retorna la diferencias de dos fechas el orden de al operacion es  secondDate - firsDate
 
 ```js
-    getDiference(firsDate,secondDate)
+    getDiference(firsDate,secondDate,firstFormat,secondFormat)
 ```
 
 ### Parametros
@@ -53,6 +53,16 @@ Toma dos fechas y retorna la diferencias de dos fechas el orden de al operacion 
 **firsDate**
 
 - La fecha que se tomara para la operacion
+
+**firstFormat**
+
+- Formato de la primera fecha
+
+**secondFormat**
+
+- Formato de la segunda fecha
+
+Si solo se envia el primer formato de fecha, se toma como que las fechas comparten formato
 
 ### Retorno
 
