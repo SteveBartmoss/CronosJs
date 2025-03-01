@@ -303,6 +303,10 @@ export function getUnitDifference(startDate, endDate, unit, startFormat=null,end
 }
 
 export function isLeapYear(year){
+    if(isNaN(year)){
+        throw new Error('year must be a number')
+    }
+    
     return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0
 }
 
