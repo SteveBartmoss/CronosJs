@@ -268,10 +268,19 @@ export function addMonths(date,format,months){
 
 }
 
-export function getUnitDifference(startDate, endDate, unit){
+export function getUnitDifference(startDate, endDate, unit, startFormat=null,endFormat=null){
 
-    const start = new Date(startDate)
-    const end = new Date(endDate)
+    let start
+    let end
+
+    if(endFormat===null){
+        start = new Date(normalizeDate(startDate,startFormat))
+        end = new Date(normalizeDate(endDate,startFormat))
+    }
+    else{
+        start = new Date(normalizeDate(startDate,startFormat))
+        end = new Date(normalizeDate(endDate,endFormat))
+    }
 
     if(isNaN(start.getTime())||isNaN(end.getTime())){
         throw new Error("Invalid date")
