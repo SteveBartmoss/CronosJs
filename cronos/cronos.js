@@ -323,9 +323,19 @@ export function toTimestamp(date,format,unit){
     return unit === 'seconds' ? Math.floor(timestamp / 1000) : timestamp 
 }
 
-export function compareDates(date1,date2){
-    const d1 = new Date(date1)
-    const d2 = new Date(date2)
+export function compareDates(date1,date2,formatOne=null,formatTwo=null){
+
+    let d1
+    let d2
+
+    if(formatTwo===null){
+        d1 = new Date(normalizeDate(date1,formatOne))
+        d2 = new Date(normalizeDate(date2,formatOne))
+    }
+    else{
+        d1 = new Date(normalizeDate(date1,formatOne))
+        d2 = new Date(normalizeDate(date2,formatTwo))
+    }
 
     if(isNaN(d1.getTime())||isNaN(d2.getTime())){
         throw new Error("Invalid date")
