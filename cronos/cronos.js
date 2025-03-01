@@ -306,12 +306,13 @@ export function isLeapYear(year){
     if(isNaN(year)){
         throw new Error('year must be a number')
     }
-    
+
     return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0
 }
 
-export function toTimestamp(date,unit){
-    const objDate = new Date(date)
+export function toTimestamp(date,format,unit){
+
+    const objDate = new Date(normalizeDate(date,format))
 
     if(isNaN(objDate.getTime())){
         throw new Error("Invalid date")
