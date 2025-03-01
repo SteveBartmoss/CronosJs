@@ -1,4 +1,4 @@
-import { addDays, addMonths, calculateAge, compareDates, formatDate, getDateNow, getDayReference, getDifference, getFirstDayOfMonth, getLastDayOfMonth, getMonthName, getUnitDifference, isDateInRange, isValidDate, toTimestamp } from "./cronos/cronos.js";
+import { addDays, addMonths, calculateAge, compareDates, formatDate, getDateNow, getDayReference, getDifference, getFirstDayOfMonth, getLastDayOfMonth, getMonthName, getUnitDifference, getWeekRange, isDateInRange, isValidDate, toTimestamp } from "./cronos/cronos.js";
 
 //console.log(getDateNow('SQL'))
 
@@ -42,3 +42,5 @@ console.log(getMonthName('01/01/2025','DD/MM/YYYY','es'))
 console.log(getMonthName('01/10/2025','DD/MM/YYYY','es'))
 
 console.log(isDateInRange('03/10/2025','01/10/2025','05/10/2025','DD/MM/YYYY','DD/MM/YYYY','DD/MM/YYYY'))
+
+console.log(getWeekRange('03/01/2025','DD/MM/YYYY'))
