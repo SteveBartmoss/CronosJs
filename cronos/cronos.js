@@ -115,8 +115,9 @@ export function getDifference(firsDate,secondDate,firstFormat=null,secondFormat=
 
 }
 
-export function addDays(date, days){
-    let objDate = new Date(date)
+export function addDays(date,format,days){
+
+    let objDate = new Date(normalizeDate(date,format))
 
     if(isNaN(objDate.getTime())){
         throw new Error("Invalid date")
