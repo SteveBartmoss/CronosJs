@@ -1,4 +1,4 @@
-import { addDays, getDateNow, getDifference, isValidDate } from "./cronos/cronos.js";
+import { addDays, getDateNow, getDayReference, getDifference, isValidDate } from "./cronos/cronos.js";
 
 //console.log(getDateNow('SQL'))
 
@@ -17,3 +17,8 @@ console.log(getDifference('01/10/2025','05-10-2025','DD/MM/YYYY','DD-MM-YYYY'))
 
 console.log(addDays('01/10/2025','DD/MM/YYYY',4))
 console.log(addDays('01-10-2025','DD-MM-YYYY',4))
+
+console.log(getDayReference('28/02/2025','DD/MM/YYYY','es'))
+console.log(getDayReference('01/03/2025','DD/MM/YYYY','es'))
+
+//console.log(getDayReference('2025-03-01','es'))
