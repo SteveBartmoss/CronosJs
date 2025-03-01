@@ -251,14 +251,21 @@ export function addMonths(date,format,months){
         throw new Error("Invalid date")
     }
 
-    const day = objDate.getDate()
-    objDate.setMonth(objDate.getMonth()+months)
+    const originalDay = objDate.getUTCDate()
+    objDate.setUTCMonth(objDate.getUTCMonth() + months)
 
-    if(objDate.getDate !== day){
-        objDate.setDate(0)
+    if (objDate.getUTCDate() !== originalDay) {
+        objDate.setUTCDate(0);
     }
 
-    return objDate
+    const day = objDate.getUTCDate()
+    const month = objDate.getUTCMonth() + 1
+    const year = objDate.getUTCFullYear()
+
+    const pad = (number) => (number < 10 ? "0"+number : number)
+
+    return format.replace("DD",pad(day)).replace("MM",pad(month)).replace("YYYY",pad(year))
+
 }
 
 export function getUnitDifference(startDate, endDate, unit){
