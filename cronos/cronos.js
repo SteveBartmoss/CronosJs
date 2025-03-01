@@ -167,14 +167,23 @@ export function isValidDate(date,format){
     return !isNaN(new Date(normalizeDate(date,format)).getTime())
 }
 
-export function getFirstDayOfMonth(date){
-    const objDate = new Date(date)
+export function getFirstDayOfMonth(date,format){
+
+    const objDate = new Date(normalizeDate(date,format))
 
     if(isNaN(objDate.getTime())){
         throw new Error("Invalid date")
     }
 
-    return new Date(objDate.getFullYear(),objDate.getMonth(),1)
+    const newDate = new Date(objDate.getFullYear(),objDate.getMonth(),1)
+
+    const day = newDate.getUTCDate()
+    const month = newDate.getUTCMonth()+1
+    const year = newDate.getUTCFullYear()
+
+    const pad = (number) => (number < 10 ? "0"+number : number)
+
+    return format.replace("DD",pad(day)).replace("MM",pad(month)).replace("YYYY",pad(year))
 }
 
 export function getLastDayOfMonth(date){
