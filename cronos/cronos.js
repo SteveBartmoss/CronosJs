@@ -186,15 +186,24 @@ export function getFirstDayOfMonth(date,format){
     return format.replace("DD",pad(day)).replace("MM",pad(month)).replace("YYYY",pad(year))
 }
 
-export function getLastDayOfMonth(date,formart){
+export function getLastDayOfMonth(date,format){
 
-    const objDate = new Date(normalizeDate(date,formart))
+    const objDate = new Date(normalizeDate(date,format))
 
     if(isNaN(objDate.getTime())){
         throw new Error("Invalid date")
     }
 
-    return new Date(objDate.getFullYear(), objDate.getMonth()+1,0)
+    const newDate = new Date(objDate.getFullYear(), objDate.getMonth()+1,0)
+
+    const day = newDate.getUTCDate()
+    const month = newDate.getUTCMonth()+1
+    const year = newDate.getUTCFullYear()
+
+    const pad = (number) => (number < 10 ? "0"+number : number)
+
+    return format.replace("DD",pad(day)).replace("MM",pad(month)).replace("YYYY",pad(year))
+
 }
 
 export function calculateAge(birthDate){
