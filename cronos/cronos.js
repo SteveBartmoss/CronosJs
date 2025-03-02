@@ -41,9 +41,10 @@ function normalizeDate(date,format=null){
     }
 
     const refactorDate = `${year}-${String(month).padStart(2,"0")}-${String(day).padStart(2,"0")}`
-    if(isNaN(new Date(refactorDate),getTime())){
+
+    if (isNaN(Date.parse(refactorDate))) {
         throw new Error("Invalid date")
-    }
+    }    
 
     return refactorDate
   
