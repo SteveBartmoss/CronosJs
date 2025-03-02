@@ -1,10 +1,15 @@
 # CronosJs 1.1.2 (Alfa)
 
-Libreria para trabajar con fechas en JavaScript
+- [Documentacion espanol](#ES)
+- [Documentacion ingles](#EN)
+
+## ES
+
+Librería para trabajar con fechas en JavaScript
 
 **Importante**
 
-Las funciones ahora pueden trabajar con diferentes tipos de fechas, por defecto new Date espera que el formato sea **YYYY-MM-DD** pero se implmento un funcion para normalizar las fechas por lo cual las funciones que reciben de una fecha tambien deben recibir el formato de la fecha que se envia, en caso de que el formato no este entre los soportados se hara un acercamiento lo mejor que se pueda para determinsr el orden de los datos proporcionados.
+Las funciones ahora pueden trabajar con diferentes tipos de fechas, por defecto new Date espera que el formato sea **YYYY-MM-DD**, pero se implementó una función para normalizar las fechas por lo cual las funciones que reciben de una fecha también deben recibir el formato de la fecha que se envía, en caso de que el formato no este entre los soportados se hará un acercamiento lo mejor que se pueda para determinar el orden de los datos proporcionados.
 
 Los formatos aceptados son: 
 - "DD/MM/YYYY" 
@@ -16,7 +21,7 @@ Los formatos aceptados son:
 
 ## Funciones actuales
 
-Estas son algunas de las funcion que se tienen por el momento
+Estas son algunas de las funciones que se tienen por el momento
 
 ### getDateNow
 
@@ -29,7 +34,7 @@ Devuelve la fecha actual en diferentes formatos
 ### Parametros
 
 **formatDate** 
-- el formato en el que se quiere la fecha actual, debe ser un string
+- El formato en el que se quiere la fecha actual, debe ser un string
 
 **Formatos aceptados**
 - ISO
@@ -39,7 +44,7 @@ Devuelve la fecha actual en diferentes formatos
 
 ### getDiference
 
-Toma dos fechas y retorna la diferencias de dos fechas el orden de al operacion es  secondDate - firsDate
+Toma dos fechas y retorna la diferencia entre dos fechas. El orden de la operación es secondDate - firsDate
 
 ```js
     getDiference(firsDate,secondDate,firstFormat,secondFormat)
@@ -48,11 +53,11 @@ Toma dos fechas y retorna la diferencias de dos fechas el orden de al operacion 
 ### Parametros
 
 **firsDate**
-- La fecha que se tomara para la operacion
+- La pimer fecha que se tomara para la operacion
 
-**firsDate**
+**secondDate**
 
-- La fecha que se tomara para la operacion
+- La segunda fecha que se tomara para la operacion
 
 **firstFormat**
 
@@ -62,7 +67,7 @@ Toma dos fechas y retorna la diferencias de dos fechas el orden de al operacion 
 
 - Formato de la segunda fecha
 
-Si solo se envia el primer formato de fecha, se toma como que las fechas comparten formato
+Si solo se envía el primer formato de fecha, se toma como que las fechas comparten formato
 
 ### Retorno
 
@@ -70,7 +75,7 @@ Se regresa la diferencia en dias
 
 ### addDays 
 
-Toma una fecha y un numero de dias, a la fecha le suma el numero de dias
+Toma una fecha y un número de días; a la fecha le suma el número de días
 
 ```js
     addDays(date,format,days)
@@ -519,3 +524,44 @@ Los formatos aceptados son:
 - "DD-MM-YYYY" 
 - "MM-DD-YYYY" 
 - "YYYY-MM-DD"
+
+## EN
+
+Library to work with dates in JavaScript
+
+**Important**
+
+Functions can now work with different types of dates, by default new Date expects the format to be **YYYYYY-MM-DD**, but a function was implemented to normalize dates so functions that receive from a date must also receive the format of the date being sent, in case the format is not among the supported ones a best-effort approach will be made to determine the order of the data provided.
+
+Accepted formats are:
+
+Los formatos aceptados son: 
+- "DD/MM/YYYY" 
+- "MM/DD/YYYY" 
+- "YYYY/MM/DD" 
+- "DD-MM-YYYY" 
+- "MM-DD-YYYY" 
+- "YYYY-MM-DD"
+
+## Current functions
+
+These are some of the functions available at the moment
+
+### getDateNow
+
+Returns the current date in different formats
+
+```js
+    getDateNow(formnatDate)
+```
+
+### Parameters
+
+**formatDate** 
+- The format in which you want the current date, must be a string
+
+**Accepted formats**
+- ISO
+- EUR
+- USA
+- SQL
