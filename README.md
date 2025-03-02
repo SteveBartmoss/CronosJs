@@ -73,7 +73,7 @@ Se regresa la diferencia en dias
 Toma una fecha y un numero de dias, a la fecha le suma el numero de dias
 
 ```js
-    addDays(date,days)
+    addDays(date,format,days)
 ```
 
 ### Parametros
@@ -84,6 +84,10 @@ Toma una fecha y un numero de dias, a la fecha le suma el numero de dias
 **days**
 - Numero de dias que se sumaran a la fecha
 
+**format**
+
+- Es el formato en el que se manda la fecha
+
 ### Retorno
 
 La fecha con la suma de los dias
@@ -93,7 +97,7 @@ La fecha con la suma de los dias
 Toma una fecha y un lenguaje y devuelve el nombre del dia que representa la semana
 
 ```js
-    getDayReference(date,language)
+    getDayReference(date,format,language)
 ```
 
 ### Parametros
@@ -108,6 +112,10 @@ Toma una fecha y un lenguaje y devuelve el nombre del dia que representa la sema
 
 - en
 - es
+
+**format**
+
+- Es el formato en el que se manda la fecha
 
 ### Retorno 
 
@@ -147,7 +155,7 @@ true si la fecha es valida de lo contrario false
 recibe una fecha y devuelve el primer dia del mes de esa fecha
 
 ```js
-    getFirstDayOfMonth(date)
+    getFirstDayOfMonth(date,format)
 ```
 ### Parametros
 
@@ -155,6 +163,10 @@ recibe una fecha y devuelve el primer dia del mes de esa fecha
 - Fecha a partir de la cual se regresa el primer dia del mes
 
 recibe una fecha y devuelve el primer dia del mes de esa fecha
+
+**format**
+
+- Es el formato en el que se manda la fecha
 
 ### Retorno
 
@@ -165,7 +177,7 @@ Primer dia del mes de la fecha que se envia
 recibe una fecha y devuelve el ultimo dia del mes de esa fecha
 
 ```js
-    getLastDayOfMonth(date)
+    getLastDayOfMonth(date,format)
 ```
 
 ### Parametros
@@ -173,6 +185,10 @@ recibe una fecha y devuelve el ultimo dia del mes de esa fecha
 **date** 
 
 - Fecha a partir de la cual se regresa el ultimo dia del mes
+
+**format**
+
+- Es el formato en el que se manda la fecha
 
 ### Retorno
 
@@ -183,7 +199,7 @@ Ultimo dia del mes de la fecha que se envia
 recibe una fecha de nacimiento y devuelve la edad que corresponde a esa fecha
 
 ```js
-    calculateAge(birthDate)
+    calculateAge(birthDate,format)
 ```
 
 ### Parametros
@@ -191,6 +207,10 @@ recibe una fecha de nacimiento y devuelve la edad que corresponde a esa fecha
 **birthDate**
 
 - Fecha de nacimiento para calcular la edad
+
+**format**
+
+- Es el formato en el que se manda la fecha
 
 ### Retorno
 
@@ -201,7 +221,7 @@ La edad que corresponde a la fecha de nacimiento
 recibe una fecha y el formato deseado, devuelve la fecha con el formato que se indico
 
 ```js
-    calculateAge(date,format)
+    calculateAge(date,format,formatFinal)
 ```
 ### Parametros
 
@@ -210,6 +230,10 @@ recibe una fecha y el formato deseado, devuelve la fecha con el formato que se i
 - Fecha que se desea formatear
 
 **format**
+
+- Es el formato en el que se manda la fecha
+
+**formatFinal**
 
 - Formato en el que se quiere la fecha final
 
@@ -222,13 +246,17 @@ La fecha con el nuevo formato
 recibe una fecha y un numero de meses, devuelve la fecha con la suma de los meses que se pasaron
 
 ```js
-    addMonths(date,months)
+    addMonths(date,format,months)
 ```
 
 ### Parametros
 
 **date**
 - Fecha a la cual se le sumaran los meses
+
+**format**
+
+- Es el formato en el que se manda la fecha
 
 **months**
 - Numero de meses que se desean sumar a la fecha
@@ -242,7 +270,7 @@ La fecha con la suma de los meses especificados
 recibe dos fechas y una unidad, devuelve la diferencia entre las dos fechas en la unidad que se envia, el orden de la operacion es endDate - startDate
 
 ```js
-    getUnitDiference(startDate,endDate,unit)
+    getUnitDiference(startDate,endDate,unit,startFormat,endFormat)
 ```
 
 ### Parametros
@@ -255,6 +283,14 @@ recibe dos fechas y una unidad, devuelve la diferencia entre las dos fechas en l
 
 **unit** 
 - Tipo de unidad en la que se quiere la diferencia entre las fechas
+
+**startFormat**
+
+- Formato en el que se manda la primer fecha
+
+**endFormat**
+
+- Formato en el que se manda la segunda fecha, se se omite se toma que las fechas comparten el formato
 
 Las unidades aceptadas son 
 - days
@@ -288,7 +324,7 @@ true si es biciesto o false si no lo es
 recibe una fecha y una unidad de tiempo, la pasa al formato de la unidas que toma como argumento
 
 ```js
-    toTimestamp(date,unit)
+    toTimestamp(date,format,unit)
 ```
 
 ### Parametros 
@@ -296,6 +332,10 @@ recibe una fecha y una unidad de tiempo, la pasa al formato de la unidas que tom
 **date**
 
 - Fecha que se quiere pasar a un formato de timestamp
+
+**format**
+
+- Es el formato en el que se manda la fecha
 
 **unit** 
 
@@ -315,7 +355,7 @@ Los segundos o mili segundos que corresponden a la fecha envida
 recibe dos fechas y las compara el orden de comparacion es date1 < date2
 
 ```js
-    compareDates(date1,date2)
+    compareDates(date1,date2,formatOne,formatTwo)
 ```
 
 ### Parametros 
@@ -328,6 +368,14 @@ recibe dos fechas y las compara el orden de comparacion es date1 < date2
 
 - Segunda fecha a comparar
 
+**formatOne**
+
+- Formato en el que se envia la primer fecha
+
+**formatTwo**
+
+- Formato en el que se envia la segunda fecha, si se omite se toma como que las fechas comparten el formato
+
 ### Retorno 
 
 si la primer fecha es mayor que la segunda retorna 1, de lo contrario retorna -1 y si las fechas son 
@@ -338,7 +386,7 @@ iguales retorna 0
 recibe una fecha y un lenguaje, retorna el nombre del mes que corresponde a la fecha que se pasa como parametro
 
 ```js
-    getMonthName(date,language)
+    getMonthName(date,format,language)
 ```
 
 ### Parametros
@@ -346,6 +394,10 @@ recibe una fecha y un lenguaje, retorna el nombre del mes que corresponde a la f
 **date**
 
 - Fecha de la cual se quiere obtener el nombre del mes
+
+**format**
+
+- Es el formato en el que se manda la fecha
 
 **language**
 
@@ -360,7 +412,7 @@ Nombre del mes que corresponde a la fecha que se manda como parametro
 Comprueba si una fecha esta dentro de un rango, el orden de comparacion es startDate <= date <= endDate
 
 ```js
-    isDateInRange(date,startDate,endDate)
+    isDateInRange(date,startDate,endDate,dateFormat,startFormat,endFormat)
 ```
 
 ### Parametros
@@ -376,6 +428,18 @@ Comprueba si una fecha esta dentro de un rango, el orden de comparacion es start
 **endDate**
 
 - Fecha superior del rango
+
+**dateFormat**
+
+- Formato de la fecha que se quiere comprobar dentro del rango de fechas 
+
+**startFormat**
+
+- Formato de la fecha que se toma como inicio del rango
+
+**endFormat**
+
+- Formato de la fecha que se toma como fin del rango
 
 ### Retorno
 
@@ -395,9 +459,13 @@ Obtener el inicio y el fin de seana de una fecha
 
 - Fecha de la cual se quiere obtener el inicio y fin de de la semana
 
+**format**
+
+- Es el formato en el que se manda la fecha
+
 ### Retorno 
 
-Regresa el inicio y fin de semana de la fecha enviada
+Regresa el inicio y fin de semana de la fecha enviada, se toma que la semana inicia en domingo, por lo que buscara el domingo y el sabado a parti de la fecha que se envia
 
 ### timestampToDate 
 
