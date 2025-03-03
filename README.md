@@ -699,3 +699,25 @@ receives a date and returns on the first day of the month of that date
 ### Return
 
 First day of the month of the date being sent
+
+### getLastDayOfMonth
+
+receives a date and returns the last day of the month of that date
+
+```js
+    getLastDayOfMonth(date,format)
+```
+
+### Parameters
+
+**date** 
+
+- Date from which the last day of the month is to be returned
+
+**format**
+
+- It is the format in which the date is sent.
+
+### Return
+
+Last day of the month of the date being shipped
