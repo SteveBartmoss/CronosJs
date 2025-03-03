@@ -743,3 +743,28 @@ receives a date of birth and returns the age corresponding to that date
 ### Return
 
 The age corresponding to the date of birth
+
+### formatDate
+
+receives a date and the desired format, returns the date with the format that was specified
+
+```js
+    calculateAge(date,format,formatFinal)
+```
+### Parameters
+
+**date**
+
+- Date to be formatted
+
+**format**
+
+- It is the format in which the date is sent.
+
+**formatFinal**
+
+- Format in which you want the end date
+
+### Return
+
+The date with the new format
