@@ -721,3 +721,25 @@ receives a date and returns the last day of the month of that date
 ### Return
 
 Last day of the month of the date being shipped
+
+### calculateAge
+
+receives a date of birth and returns the age corresponding to that date
+
+```js
+    calculateAge(birthDate,format)
+```
+
+### Parameters
+
+**birthDate**
+
+- Date of birth to calculate age
+
+**format**
+
+- It is the format in which the date is sent.
+
+### Return
+
+The age corresponding to the date of birth
