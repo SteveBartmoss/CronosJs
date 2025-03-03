@@ -792,3 +792,40 @@ receives a date and a number of months, returns the date with the sum of the mon
 ### Return
 
 The date with the sum of the specified months
+
+### getUnitDiference
+
+receives two dates and one unit, returns the difference between the two dates in the unit to be sent, the order of the operation is endDate - startDate
+
+```js
+    getUnitDiference(startDate,endDate,unit,startFormat,endFormat)
+```
+
+### Parameters
+
+**startDate** 
+- First date to be taken for the operation
+
+**endDate** 
+- Second date to be taken for the operation
+
+**unit** 
+- Type of unit in which the difference between dates is wanted
+
+**startFormat**
+
+- Format in which the first date is submitted
+
+**endFormat**
+
+- Format in which the second date is sent, if omitted, it is assumed that the dates share the same format.
+
+Accepted units are
+- days
+- hours
+- minutes
+- seconds
+
+### Return
+
+The difference between the dates on the unit to be shipped
