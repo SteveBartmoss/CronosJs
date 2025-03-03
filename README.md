@@ -566,3 +566,34 @@ Returns the current date in different formats
 - EUR
 - USA
 - SQL
+
+### getDiference
+
+It takes two dates and returns the difference between two dates. The order of the operation is secondDate - firsDate
+
+```js
+    getDiference(firsDate,secondDate,firstFormat,secondFormat)
+```
+
+### Parameters
+
+**firsDate**
+- First date to be taken for the operation
+
+**secondDate**
+
+- The second date to be taken for operation
+
+**firstFormat**
+
+- Format of the first date
+
+**secondFormat**
+
+- Format of the second date
+
+If only the first date format is sent, it is assumed that the dates share the same format.
+
+### Return
+
+The difference is returned in days
