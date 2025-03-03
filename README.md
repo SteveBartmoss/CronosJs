@@ -768,3 +768,27 @@ receives a date and the desired format, returns the date with the format that wa
 ### Return
 
 The date with the new format
+
+### addMonths 
+
+receives a date and a number of months, returns the date with the sum of the months that have elapsed
+
+```js
+    addMonths(date,format,months)
+```
+
+### Parameters
+
+**date**
+- Date to which the following months will be added
+
+**format**
+
+- It is the format in which the date is sent.
+
+**months**
+- Number of months you wish to add to date
+
+### Return
+
+The date with the sum of the specified months
