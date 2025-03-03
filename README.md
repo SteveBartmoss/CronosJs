@@ -18,6 +18,7 @@ Los formatos aceptados son:
 - "DD-MM-YYYY" 
 - "MM-DD-YYYY" 
 - "YYYY-MM-DD"
+- "YYYY-DD-MM"
 
 ## Funciones actuales
 
