@@ -650,3 +650,32 @@ Takes a date and a language and returns the name of the day that represents the 
 ### Return 
 
 The day reference is in the date provided.
+
+### isValidDate
+
+Take a date and validate that it is a correct date.
+
+```js
+    isValidDate(date,format)
+```
+
+### Parameters
+
+**date**
+- Date to be validated
+
+**format**
+- Format in which the date is in, if the format is omitted, it will be done to the best possible approximation.
+
+**Expected Formats**
+
+- "DD/MM/YYYY" 
+- "MM/DD/YYYY" 
+- "YYYY/MM/DD" 
+- "DD-MM-YYYY" 
+- "MM-DD-YYYY" 
+- "YYYY-MM-DD"
+
+### Return
+
+true if date is valid otherwise false
