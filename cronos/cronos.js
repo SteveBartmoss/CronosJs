@@ -19,6 +19,7 @@ function normalizeDate(date,format=null){
         "DD-MM-YYYY": [2,1,0],
         "MM-DD-YYYY": [2,0,1],
         "YYYY-MM-DD": [0,1,2],
+        "YYYY-DD-MM": [0,2,1],
     }
 
     if (format in formatMap){
