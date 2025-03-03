@@ -597,3 +597,27 @@ If only the first date format is sent, it is assumed that the dates share the sa
 ### Return
 
 The difference is returned in days
+
+### addDays 
+
+Take a date and a number of days; add the number of days to the date.
+
+```js
+    addDays(date,format,days)
+```
+
+### Parametros
+
+**date** 
+- Date to which days will be added
+
+**days**
+- Number of days to be added to date
+
+**format**
+
+- It is the format in which the date is sent.
+
+### Retorno
+
+The date with the sum of the days
