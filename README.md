@@ -679,3 +679,23 @@ Take a date and validate that it is a correct date.
 ### Return
 
 true if date is valid otherwise false
+
+### getFirstDayOfMonth 
+
+receives a date and returns on the first day of the month of that date
+
+```js
+    getFirstDayOfMonth(date,format)
+```
+### Parameters
+
+**date**
+- Date from which the first day of the month is returned
+
+**format**
+
+- It is the format in which the date is sent.
+
+### Return
+
+First day of the month of the date being sent
