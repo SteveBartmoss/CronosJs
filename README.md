@@ -606,7 +606,7 @@ Take a date and a number of days; add the number of days to the date.
     addDays(date,format,days)
 ```
 
-### Parametros
+### Parameters
 
 **date** 
 - Date to which days will be added
@@ -618,6 +618,35 @@ Take a date and a number of days; add the number of days to the date.
 
 - It is the format in which the date is sent.
 
-### Retorno
+### Return
 
 The date with the sum of the days
+
+### getDayReference
+
+Takes a date and a language and returns the name of the day that represents the week.
+
+```js
+    getDayReference(date,format,language)
+```
+
+### Parameters
+
+**date**
+- Date from which the day's reference will be obtained
+
+**language**
+- The language in which you want to obtain the reference of the day.
+
+**Language formats**
+
+- en
+- es
+
+**format**
+
+- It is the format in which the date is sent.
+
+### Return 
+
+The day reference is in the date provided.
