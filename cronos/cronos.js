@@ -323,11 +323,7 @@ export function compareDates(date1,date2,formatOne=null,formatTwo=null){
 export function getMonthName(date,format,language='es'){
 
     const objDate = new Date(normalizeDate(date,format))
-
-    if(isNaN(objDate.getTime())){
-        throw new Error("Invalid date")
-    }
-
+    
     objDate.setUTCHours(12)
 
     return new Intl.DateTimeFormat(language, {month: "long"}).format(objDate)
