@@ -877,3 +877,34 @@ The available units are
 ### Return 
 
 The seconds or milliseconds corresponding to the date sent
+
+### compareDates
+
+receives two dates and compares them the order of comparison is date1 < date2
+
+```js
+    compareDates(date1,date2,formatOne,formatTwo)
+```
+
+### Parameters 
+
+**date1**
+
+- First date to compare
+
+**date2** 
+
+- Second date to compare
+
+**formatOne**
+
+- Format in which the first date is sent
+
+**formatTwo**
+
+- Format in which the second date is sent, if omitted it is assumed that the dates share the format.
+
+### Return 
+
+if the first date is greater than the second returns 1, otherwise returns -1 and if the dates are equal returns 0 
+equal returns 0
