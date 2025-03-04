@@ -829,3 +829,20 @@ Accepted units are
 ### Return
 
 The difference between the dates on the unit to be shipped
+
+### isLeapyear
+
+receives a numeric year and returns true if the year is a leap year or otherwise returns false
+
+```js
+    isLeapyear(year)
+```
+
+### Parameters
+
+**year**
+- Year to be checked for leap year
+
+### Return
+
+true if leap or false if not leap
