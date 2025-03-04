@@ -204,10 +204,6 @@ export function calculateAge(birthDate,format){
     const today = new Date()
     const birth = new Date(normalizeDate(birthDate,format))
 
-    if(isNaN(birth.getTime())){
-        throw new Error("Invalid date")
-    }
-
     let age = today.getFullYear() - birth.getFullYear()
 
     const hasBirthdayPassed = 
