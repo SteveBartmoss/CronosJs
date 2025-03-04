@@ -105,10 +105,6 @@ export function getDifference(firsDate,secondDate,firstFormat=null,secondFormat=
         endDate = new Date(normalizeDate(secondDate,secondFormat))
     }
 
-    if(isNaN(startDate.getTime())||isNaN(endDate.getTime())){
-        throw new Error("Invalid date")
-    }
-
     let difference = endDate - startDate
 
     difference = difference / (1000 * 60 * 60 * 24)
