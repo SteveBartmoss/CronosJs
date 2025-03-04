@@ -221,10 +221,6 @@ export function formatDate(date, format="DD-MM-YYYY",formatFinal){
     
     const objDate = new Date(normalizeDate(date,format))
 
-    if(isNaN(objDate.getTime())){
-        throw new Error("Invalid date")
-    }
-
     const day = objDate.getUTCDate()
     const month = objDate.getUTCMonth()+1
     const year = objDate.getUTCFullYear()
