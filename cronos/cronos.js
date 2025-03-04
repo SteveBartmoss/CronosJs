@@ -173,10 +173,6 @@ export function getFirstDayOfMonth(date,format){
 
     const objDate = new Date(normalizeDate(date,format))
 
-    if(isNaN(objDate.getTime())){
-        throw new Error("Invalid date")
-    }
-
     const newDate = new Date(objDate.getFullYear(),objDate.getMonth(),1)
 
     const day = newDate.getUTCDate()
