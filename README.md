@@ -1021,3 +1021,33 @@ The available units are
 ### Return
 
 Return a date from the timestamp
+
+### normalizeDate
+
+This function is for internal use of the library, but it can be used to receive a date and normalize it to the javascript date standard YYYYY-MM-DD.
+
+```js
+    normalizeDate(date,format)
+```
+
+### Parametros
+
+**date**
+
+- Date you want to normalize to the format you use in javascript
+
+**format**
+
+- Format in which the date to be normalized is sent, if the format is omitted it is to make the best approximation to the date values. 
+
+Accepted formats are: 
+- "DD/MM/YYYY" 
+- "MM/DD/YYYY" 
+- "YYYY/MM/DD" 
+- "DD-MM-YYYY" 
+- "MM-DD-YYYY" 
+- "YYYY-MM-DD"
+
+### Return
+
+Returns the date in the format YYYYY-MM-DD
