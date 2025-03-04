@@ -292,10 +292,6 @@ export function toTimestamp(date,format,unit){
 
     const objDate = new Date(normalizeDate(date,format))
 
-    if(isNaN(objDate.getTime())){
-        throw new Error("Invalid date")
-    }
-
     const timestamp = objDate.getTime()
 
     return unit === 'seconds' ? Math.floor(timestamp / 1000) : timestamp 
