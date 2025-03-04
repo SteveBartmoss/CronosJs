@@ -117,10 +117,6 @@ export function addDays(date,format,days){
 
     let objDate = new Date(normalizeDate(date,format))
 
-    if(isNaN(objDate.getTime())){
-        throw new Error("Invalid date")
-    }
-
     if(isNaN(days)){
         throw new Error("days must be a number")
     }
