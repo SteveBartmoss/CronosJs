@@ -2,7 +2,7 @@
   "name": "@stevebartmoss/cronosjs",
   "version": "1.16.17",
   "description": "Libreria para trabajar con fechas",
-  "main": "index.js",
+  "main": "cronos/cronos.js",
   "type": "module",
   "scripts": {
     "test": "jest"
