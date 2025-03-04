@@ -934,3 +934,41 @@ receives a date and a language, returns the name of the month that corresponds t
 ### Return 
 
 Name of the month that corresponds to the date sent as a parameter
+
+### isDateInRange
+
+Checks if a date falls within a range, the order of comparison is startDate <= date <= endDate
+
+```js
+    isDateInRange(date,startDate,endDate,dateFormat,startFormat,endFormat)
+```
+
+### Parameters
+
+**date**
+
+- Date to be checked if it is within range
+
+**startDate**
+
+- Lower date of range
+
+**endDate**
+
+- Top of range date
+
+**dateFormat**
+
+- Format of the date to be checked within the date range 
+
+**startFormat**
+
+- Format of the date to be taken as the start of the range
+
+**endFormat**
+
+- Format of the date to be taken as end of range
+
+### Return
+
+Returns true if the date falls within the range, or flase if it does not fall within the range.
