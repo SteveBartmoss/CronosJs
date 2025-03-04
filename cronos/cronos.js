@@ -137,11 +137,7 @@ export function addDays(date,format,days){
 export function getDayReference(date,format,language='es'){
 
     const objDate = new Date(normalizeDate(date,format))
-
-    if(isNaN(objDate.getTime())){
-        throw new Error("Invalid date")
-    }
-
+    
     const days = {
         en: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
         es: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado']
