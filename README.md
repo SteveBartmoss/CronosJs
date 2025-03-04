@@ -846,3 +846,34 @@ receives a numeric year and returns true if the year is a leap year or otherwise
 ### Return
 
 true if leap or false if not leap
+
+### toTimestamp
+
+receives a date and a unit of time, passes it to the format of the unit it takes as argument
+
+```js
+    toTimestamp(date,format,unit)
+```
+
+### Parameters 
+
+**date**
+
+- Date to be converted to a timestamp format
+
+**format**
+
+- It is the format in which the date is sent.
+
+**unit** 
+
+- Unit to which you want to move the date
+
+The available units are
+
+- seconds
+- miliseconds
+
+### Return 
+
+The seconds or milliseconds corresponding to the date sent
