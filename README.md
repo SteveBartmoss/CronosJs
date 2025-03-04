@@ -994,3 +994,30 @@ Get the start and end of week of a date
 ### Return 
 
 Returns the beginning and end of the week of the date sent, it is assumed that the week starts on Sunday, so it will look for Sunday and Saturday from the date sent.
+
+### timestampToDate 
+
+receives a timestamp and a unit, returns a date by taking the timestamp and transforming it to the unit that was passed
+
+```js
+    timestampToDate(timestamp, unit)
+```
+
+### Parameters
+
+**timestamp**
+
+- Time stamp to be converted to a date
+
+**unit**
+
+- Unit of time in which the timestamp is located
+
+The available units are 
+
+- seconds
+- miliseconds
+
+### Return
+
+Return a date from the timestamp
