@@ -342,10 +342,6 @@ export function getWeekRange(date,format){
 
     const objDate = new Date(normalizeDate(date,format))
 
-    if(isNaN(objDate.getTime())){
-        throw new Error("invalid date")
-    }
-
     const dayOfWeek = objDate.getUTCDay()
 
     const diffToMonday = dayOfWeek === 0 ? -6 : 1 - dayOfWeek
