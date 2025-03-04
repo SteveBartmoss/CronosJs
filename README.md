@@ -972,3 +972,25 @@ Checks if a date falls within a range, the order of comparison is startDate <= d
 ### Return
 
 Returns true if the date falls within the range, or flase if it does not fall within the range.
+
+### getWeekRange
+
+Get the start and end of week of a date
+
+```js
+    getWeekRange(date)
+```
+
+### Parameters
+
+**date**
+
+- Date from which the start and end of the week are to be obtained
+
+**format**
+
+- It is the format in which the date is sent.
+
+### Return 
+
+Returns the beginning and end of the week of the date sent, it is assumed that the week starts on Sunday, so it will look for Sunday and Saturday from the date sent.
