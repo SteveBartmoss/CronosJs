@@ -233,10 +233,6 @@ export function formatDate(date, format="DD-MM-YYYY",formatFinal){
 export function addMonths(date,format,months){
     const objDate = new Date(normalizeDate(date,format))
 
-    if(isNaN(objDate.getTime())){
-        throw new Error("Invalid date")
-    }
-
     const originalDay = objDate.getUTCDate()
     objDate.setUTCMonth(objDate.getUTCMonth() + months)
 
