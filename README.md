@@ -908,3 +908,29 @@ receives two dates and compares them the order of comparison is date1 < date2
 
 if the first date is greater than the second returns 1, otherwise returns -1 and if the dates are equal returns 0 
 equal returns 0
+
+### getMonthName 
+
+receives a date and a language, returns the name of the month that corresponds to the date passed as parameter
+
+```js
+    getMonthName(date,format,language)
+```
+
+### Parameters
+
+**date**
+
+- Date from which you want to obtain the month name
+
+**format**
+
+- It is the format in which the date is sent.
+
+**language**
+
+- Language in which the name of the month is desired
+
+### Return 
+
+Name of the month that corresponds to the date sent as a parameter
