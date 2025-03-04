@@ -323,7 +323,7 @@ export function compareDates(date1,date2,formatOne=null,formatTwo=null){
 export function getMonthName(date,format,language='es'){
 
     const objDate = new Date(normalizeDate(date,format))
-    
+
     objDate.setUTCHours(12)
 
     return new Intl.DateTimeFormat(language, {month: "long"}).format(objDate)
@@ -334,10 +334,6 @@ export function isDateInRange(date,startDate,endDate,dateFormat=null,startFormat
     const objDate = new Date(normalizeDate(date,dateFormat))
     const start = new Date(normalizeDate(startDate,startFormat))
     const end = new Date(normalizeDate(endDate,endFormat))
-
-    if(isNaN(objDate.getTime())||isNaN(start.getTime())||isNaN(end.getTime())){
-        throw new Error("Invalid date")
-    }
 
     return objDate >= start && objDate <= end
 }
