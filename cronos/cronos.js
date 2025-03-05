@@ -375,3 +375,7 @@ export function timestampToDate(timestamp, unit){
     const ms = unit === "seconds" ? timestamp * 1000 : timestamp
     return new Date(ms)
 }
+
+export function daysToWeeks(days){
+    return Math.floor(days/7)
+}
