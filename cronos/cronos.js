@@ -381,5 +381,9 @@ export function daysToWeeks(days){
 }
 
 export function hoursToSeconds(hours){
+    return Math.floor(hours*60*60)
+}
+
+export function hoursToMinutes(hours){
     return Math.floor(hours*60)
 }
