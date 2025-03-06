@@ -379,3 +379,7 @@ export function timestampToDate(timestamp, unit){
 export function daysToWeeks(days){
     return Math.floor(days/7)
 }
+
+export function hoursToSeconds(hours){
+    return Math.floor(hours*60)
+}
