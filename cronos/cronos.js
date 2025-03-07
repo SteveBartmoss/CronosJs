@@ -399,3 +399,54 @@ export function milisecondsToHours(miliseconds){
 export function milisecondsTo(miliseconds){
     return Math.floor(miliseconds/1000)
 }
+
+export function unitTimeConvert(unit,typeOne,typeTwo){
+
+    switch(typeOne){
+        case 'milliseconds':
+
+            switch(typeTwo){
+                case 'seconds':
+                    return Math.floor(unit/1000)
+                case 'minutes':
+                    return Math.floor(unit/1000/60)
+                case 'hours': 
+                    return Math.floor(unit/1000/60/60)
+            }
+            break
+        
+        case 'seconds':
+
+            switch(typeTwo){
+                case 'milliseconds':
+                    return unit * 1000
+                case 'minutes':
+                    return Math.floor(unit/60)
+                case 'hours':
+                    return Math.floor(unit/60/60)
+            }
+            break
+        
+        case 'minutes':
+            switch(typeTwo){
+                case 'milliseconds':
+                    return unit * 60 * 1000
+                case 'seconds':
+                    return unit * 60
+                case 'hours':
+                    return Math.floor(unit/60)
+            }
+            break
+
+        case 'hours':
+            switch(typeTwo){
+                case 'milliseconds':
+                    return unit * 60 * 60 * 1000
+                case 'seconds':
+                    return unit * 60 * 60
+                case 'minutes':
+                    return unit * 60
+            }
+            break
+    }
+}
