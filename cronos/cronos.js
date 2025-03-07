@@ -384,10 +384,6 @@ export function hoursToSeconds(hours){
     return Math.floor(hours*60*60)
 }
 
-export function hoursToMinutes(hours){
-    return Math.floor(hours*60)
-}
-
 export function unitTimeConvert(unit,typeOne,typeTwo){
 
     switch(typeOne){
