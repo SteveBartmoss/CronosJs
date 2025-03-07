@@ -396,9 +396,6 @@ export function milisecondsToHours(miliseconds){
     return Math.floor(miliseconds/1000/60/60)
 }
 
-export function milisecondsTo(miliseconds){
-    return Math.floor(miliseconds/1000)
-}
 
 export function unitTimeConvert(unit,typeOne,typeTwo){
 
