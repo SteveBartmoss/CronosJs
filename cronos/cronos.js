@@ -427,61 +427,17 @@ export function unitTimeConvert(unit,typeOne,typeTwo){
     }
 }
 
-//prototipo para convertir unidades de tipo fecha
+
 export function unitDateConvert(unit,typeOne,typeTwo){
 
-    switch(typeOne){
-        case 'days':
-            switch(typeTwo){
-                case 'weeks':
-                    return Math.floor(unit/7)
-                case 'months':
-                    return Math.floor(unit/30)
-                case 'quarters':
-                    return 
-                case 'years':
-                    return Math.floor(unit/365)
-            }
-            break
-
-        case 'weeks':
-            switch(typeTwo){
-                case 'days':
-                    return unit*7
-                case 'monts':
-                    return Math.floor(unit/4)
-                case 'quarters':
-                    return
-                case 'years':
-                    return Math.floor(unit/48)
-            }
-            break
-        
-        case 'months':
-            switch(typeTwo){
-                case 'days':
-                    return unit * 30
-                case 'weeks':
-                    return unit * 4
-                case 'quarters':
-                    return
-                case 'years':
-                    return Math.floor(unit/12)
-            }
-            break
-
-        case 'quarters':
-            break
-        
-        case 'years':
-            switch(typeTwo){
-                case 'days':
-                    return unit * 365
-                case 'weeks':
-                    return unit * 48
-                case 'quarters':
-                    return
-            }
-            break
+    const dateUnits = {
+        days: 1,
+        weeks: 7,
+        months: 30.4375,
+        quarters: 91.3125,
+        years: 365.25
     }
+
+    return unit * (dateUnits[typeOne]/dateUnits[typeTwo])
+    
 }
