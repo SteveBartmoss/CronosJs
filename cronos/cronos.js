@@ -376,10 +376,6 @@ export function timestampToDate(timestamp, unit){
     return new Date(ms)
 }
 
-export function daysToWeeks(days){
-    return Math.floor(days/7)
-}
-
 export function unitTimeConvert(unit,typeOne,typeTwo){
 
     switch(typeOne){
