@@ -377,54 +377,16 @@ export function timestampToDate(timestamp, unit){
 }
 
 export function unitTimeConvert(unit,typeOne,typeTwo){
-
-    switch(typeOne){
-        case 'milliseconds':
-
-            switch(typeTwo){
-                case 'seconds':
-                    return Math.floor(unit/1000)
-                case 'minutes':
-                    return Math.floor(unit/1000/60)
-                case 'hours': 
-                    return Math.floor(unit/1000/60/60)
-            }
-            break
-        
-        case 'seconds':
-
-            switch(typeTwo){
-                case 'milliseconds':
-                    return unit * 1000
-                case 'minutes':
-                    return Math.floor(unit/60)
-                case 'hours':
-                    return Math.floor(unit/60/60)
-            }
-            break
-        
-        case 'minutes':
-            switch(typeTwo){
-                case 'milliseconds':
-                    return unit * 60 * 1000
-                case 'seconds':
-                    return unit * 60
-                case 'hours':
-                    return Math.floor(unit/60)
-            }
-            break
-
-        case 'hours':
-            switch(typeTwo){
-                case 'milliseconds':
-                    return unit * 60 * 60 * 1000
-                case 'seconds':
-                    return unit * 60 * 60
-                case 'minutes':
-                    return unit * 60
-            }
-            break
+    
+    const timeUnits = {
+        milliseconds: 1,
+        seconds: 1000,
+        minutes: 1000 * 60,
+        hours: 1000 * 60 * 60
     }
+
+    return unit * (timeUnits[typeOne]/timeUnits[typeTwo])
+    
 }
 
 
@@ -439,5 +401,5 @@ export function unitDateConvert(unit,typeOne,typeTwo){
     }
 
     return unit * (dateUnits[typeOne]/dateUnits[typeTwo])
-    
+
 }
