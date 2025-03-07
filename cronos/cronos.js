@@ -380,10 +380,6 @@ export function daysToWeeks(days){
     return Math.floor(days/7)
 }
 
-export function hoursToSeconds(hours){
-    return Math.floor(hours*60*60)
-}
-
 export function unitTimeConvert(unit,typeOne,typeTwo){
 
     switch(typeOne){
