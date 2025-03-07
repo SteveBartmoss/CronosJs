@@ -426,3 +426,37 @@ export function unitTimeConvert(unit,typeOne,typeTwo){
             break
     }
 }
+
+//prototipo para convertir unidades de tipo fecha
+export function unitDateConvert(unit,typeOne,typeTwo){
+
+    switch(typeOne){
+        case 'days':
+            switch(typeTwo){
+                case 'weeks':
+                    return Math.floor(unit/7)
+                case 'months':
+                    return Math.floor(unit/30)
+                case 'quarters':
+                    return 
+                case 'years':
+                    return Math.floor(unit/365)
+            }
+            break
+
+        case 'weeks':
+            switch(typeTwo){
+
+            }
+            break
+        
+        case 'months':
+            break
+
+        case 'quarters':
+            break
+        
+        case 'years':
+            break
+    }
+}
