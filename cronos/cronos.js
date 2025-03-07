@@ -386,7 +386,7 @@ export function unitTimeConvert(unit,typeOne,typeTwo){
     }
 
     return unit * (timeUnits[typeOne]/timeUnits[typeTwo])
-    
+
 }
 
 
@@ -402,4 +402,32 @@ export function unitDateConvert(unit,typeOne,typeTwo){
 
     return unit * (dateUnits[typeOne]/dateUnits[typeTwo])
 
+}
+
+export function dateAddTime(date,format,unit,typeUnit){
+
+    let objDate = new Date(normalizeDate(date,format))
+
+    const timeUnits = {
+        milliseconds: 1,
+        seconds: 1000,
+        minutes: 100 * 60,
+        hours: 1000 * 60 * 60,
+        days: 24 * 1000 * 60 * 60,
+    }
+    
+    let newDate = new Date(objDate)
+
+    if(typeUnit in timeUnits){
+        newDate.setTime(newDate.getTime() + unit * timeUnits[typeUnit])
+    }
+    else if(typeUnit === "months"){
+        newDate.setMonth(newDate.getMonth() + unit)
+    }
+    else if(typeUnit === "years"){
+        newDate.setFullYear(newDate.getFullYear() + unit)
+    }
+
+    return newDate
+    
 }
