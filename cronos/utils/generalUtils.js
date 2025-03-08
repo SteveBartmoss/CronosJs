@@ -47,5 +47,17 @@ export function normalizeDate(date,format=null){
     }
 
     return refactorDate
+
+}
+
+export function formatUtility(date,format){
+
+    const day = date.getUTCDate()
+    const month = date.getUTCMonth()+1
+    const year =  date.getUTCFullYear()
+
+    const pad = (number) => (number < 10 ? "0"+number : number )
+
+    return format.replace("DD",pad(day)).replace("MM",pad(month)).replace("YYYY",pad(year))
     
 }
