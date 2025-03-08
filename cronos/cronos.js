@@ -495,3 +495,12 @@ export function dateAddTime(date,format,unit,typeUnit){
 export function sortDateArray(dateArray,format){
     mergeSortDate(dateArray, 0, dateArray.length -1, format)
 }
+
+export function getElapsedTimne(firstDate,secondDate,firstFormat,secondFormat){
+
+    const objFirst = new Date(normalizeDate(firstDate,firstFormat))
+    const objSecond = new Date(normalizeDate(secondDate,secondFormat))
+
+    let diference = objSecond - objFirst
+
+}
