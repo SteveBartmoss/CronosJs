@@ -253,7 +253,7 @@ export function formatDate(date, format="DD-MM-YYYY",formatFinal){
     const objDate = new Date(normalizeDate(date,format))
 
     return formatUtility(objDate,format)
-    
+
 }
 
 export function addMonths(date,format,months){
@@ -266,13 +266,7 @@ export function addMonths(date,format,months){
         objDate.setUTCDate(0);
     }
 
-    const day = objDate.getUTCDate()
-    const month = objDate.getUTCMonth() + 1
-    const year = objDate.getUTCFullYear()
-
-    const pad = (number) => (number < 10 ? "0"+number : number)
-
-    return format.replace("DD",pad(day)).replace("MM",pad(month)).replace("YYYY",pad(year))
+    return formatUtility(objDate,format)
 
 }
 
