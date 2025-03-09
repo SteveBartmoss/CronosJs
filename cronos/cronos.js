@@ -227,13 +227,7 @@ export function getLastDayOfMonth(date,format){
 
     const newDate = new Date(objDate.getFullYear(), objDate.getMonth()+1,0)
 
-    const day = newDate.getUTCDate()
-    const month = newDate.getUTCMonth()+1
-    const year = newDate.getUTCFullYear()
-
-    const pad = (number) => (number < 10 ? "0"+number : number)
-
-    return format.replace("DD",pad(day)).replace("MM",pad(month)).replace("YYYY",pad(year))
+    return formatUtility(newDate,format)
 
 }
 
