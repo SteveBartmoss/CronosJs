@@ -372,17 +372,7 @@ export function getWeekRange(date,format){
     const endOfWeek = new Date(startOfWeek)
     endOfWeek.setUTCDate(startOfWeek.getUTCDate() + 6)
 
-    const dayStart = startOfWeek.getUTCDate()
-    const monthStart = startOfWeek.getUTCMonth()+1
-    const yearStart = startOfWeek.getUTCFullYear()
-
-    const dayEnd = endOfWeek.getUTCDate()
-    const monthEnd = endOfWeek.getUTCMonth()+1
-    const yearEnd = endOfWeek.getUTCFullYear()
-
-    const pad = (number) => (number < 10 ? "0"+number : number)
-
-    return { startOfWeek: format.replace("DD",pad(dayStart)).replace("MM",pad(monthStart)).replace("YYYY",pad(yearStart)), endOfWeek: format.replace("DD",pad(dayEnd)).replace("MM",pad(monthEnd)).replace("YYYY",pad(yearEnd))}
+    return {startOfWeek: formatUtility(startOfWeek,format), endOfWeek: formatUtility(endOfWeek,format)}
 
 }
 
