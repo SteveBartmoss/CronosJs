@@ -399,7 +399,6 @@ export function unitTimeConvert(unit,typeOne,typeTwo){
 
 }
 
-
 export function unitDateConvert(unit,typeOne,typeTwo){
 
     const dateUnits = {
@@ -438,7 +437,7 @@ export function dateAddTime(date,format,unit,typeUnit){
         newDate.setFullYear(newDate.getFullYear() + unit)
     }
 
-    return newDate
+    return formatUtility(newDate,format)
 
 }
 
