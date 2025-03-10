@@ -15,6 +15,17 @@ test('getDateNow("USA") debe retornar una fecha en formato MM/DD/YYYY', () => {
     expect(result).toMatch(/^\d{2}\/\d{2}\/\d{4}$/);
 });
 
+import { getDifference } from './cronos.js';
+
+test('getDifference() debe calcular la diferencia entre dos fechas en días', () => {
+    const diff = getDifference("2024-02-01", "2024-02-10");
+    expect(diff).toBe(9);
+});
+
+test('getDifference() debe lanzar un error si las fechas son inválidas', () => {
+    expect(() => getDifference("invalid", "2024-02-10")).toThrow("Invalid date");
+});
+
 import { addDays } from './cronos.js';
 
 test('addDates("01/10/2025","DD/MM/YYYY",5) debe retornar la fecha mas 4 dias', ()=>{
@@ -27,16 +38,17 @@ test('addDates("01-10-2025",DD-MM-YYYY",5) debe retornar la fecha mas 4 dias', (
     expect(result).toBe("05-10-2025")
 })
 
-import { getDifference } from './cronos.js';
+import { getDayReference } from './cronos.js';
 
-test('getDifference() debe calcular la diferencia entre dos fechas en días', () => {
-    const diff = getDifference("2024-02-01", "2024-02-10");
-    expect(diff).toBe(9);
-});
+test('getDayReference("28/02/2025","DD/MM/YYYY","es") debe retornar el dia de la semana', ()=>{
+    const result = getDayReference('28/02/2025','DD/MM/YYYY','es')
+    expect(result).toBe("Viernes")
+})
 
-test('getDifference() debe lanzar un error si las fechas son inválidas', () => {
-    expect(() => getDifference("invalid", "2024-02-10")).toThrow("Invalid date");
-});
+test('getDayReference("01/03/2025","DD/MM/YYYY","es") de retornar el dia de la semana', ()=>{
+    const result = getDayReference('01/03/2025','DD/MM/YYYY','es')
+    expect(result).toBe("Sábado")
+})
 
 import { isLeapYear } from './cronos.js';
 
