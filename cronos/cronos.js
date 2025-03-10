@@ -490,3 +490,14 @@ export function getElapsedTimne(firstDate,secondDate,firstFormat,secondFormat){
     return calculateRelativeTime(diference)
 
 }
+
+export function compareRightnow(date,format){
+
+    const objDate = new Date(normalizeDate(date,format))
+    const dateNow = new Date()
+
+    if(objDate>dateNow) 1
+    if(objDate<dateNow) -1
+    return 0
+    
+}
