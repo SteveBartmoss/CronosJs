@@ -15,6 +15,18 @@ test('getDateNow("USA") debe retornar una fecha en formato MM/DD/YYYY', () => {
     expect(result).toMatch(/^\d{2}\/\d{2}\/\d{4}$/);
 });
 
+import { addDays } from './cronos.js';
+
+test('addDates("01/10/2025","DD/MM/YYYY",5) debe retornar la fecha mas 4 dias', ()=>{
+    const result = addDays('01/10/2025','DD/MM/YYYY',4);
+    expect(result).toBe("05/10/2025")
+})
+
+test('addDates("01-10-2025",DD-MM-YYYY",5) debe retornar la fecha mas 4 dias', ()=>{
+    const result = addDays('01-10-2025','DD-MM-YYYY',4)
+    expect(result).toBe("05-10-2025")
+})
+
 import { getDifference } from './cronos.js';
 
 test('getDifference() debe calcular la diferencia entre dos fechas en días', () => {
