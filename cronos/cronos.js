@@ -113,6 +113,41 @@ function mergeSortDate(array,startIndex, endIndex, format){
     merge(array, startIndex, middleIndex, endIndex, format)
 }
 
+
+function calculateRelativeTime(diference){
+
+    if(diference === 0 ) return "Justo ahora"
+     
+    const seconds = diference/1000
+    const minutes = seconds/60
+    const hours = minutes/60
+    const days = hours/24
+    const weeks = days/7
+    const months = days/30
+    const years = days/365
+  
+    if(seconds<60){
+      return seconds === 1 ? 'Hace un segundo' : `Hace ${Math.floor(seconds)} segundos` 
+    }
+    if(minutes<60){
+      return minutes === 1 ? 'Hace un minuto' : `Hace ${Math.floor(minutes)} minutos`
+    }
+    if(hours<24){
+      return hours === 1 ? 'Hace una hora' : `Hace ${Math.floor(hours)} horas`
+    }
+    if(days<7){
+      return days === 1 ? 'Hace un dia' : `Hace ${Math.floor(days)} días`
+    }
+    if(weeks<4){
+      return weeks === 1 ? 'Hace una semana' : `Hace ${Math.floor(weeks)} semanas`
+    }
+    if(months<12){
+      return months === 1 ? 'Hace un mes' : `Hace ${Math.floor(months)} meses`
+    }
+  
+    return years === 1 ? 'Hace un año' : `Hace ${Math.floor(years)} años`
+}  
+
 export function getDateNow(formatDate) {
 
     if(typeof formatDate !== "string"){
@@ -451,5 +486,7 @@ export function getElapsedTimne(firstDate,secondDate,firstFormat,secondFormat){
     const objSecond = new Date(normalizeDate(secondDate,secondFormat))
 
     let diference = objSecond - objFirst
+
+    return calculateRelativeTime(diference)
 
 }
