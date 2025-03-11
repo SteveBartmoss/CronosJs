@@ -499,5 +499,28 @@ export function compareRightnow(date,format){
     if(objDate>dateNow) 1
     if(objDate<dateNow) -1
     return 0
+
+}
+
+
+export function getMax(arrayDates, format){\
+
+    if(arrayDates.length === 0){
+        return null
+    }
+
+    let max = arrayDates[0]
+
+    arrayDates.forEach((element)=>{
+        const currentDate = new Date(normalizeDate(element,format))
+        const maxDate = new Date(normalizeDate(max,format))
+
+        if(currentDate > maxDate){
+            max = elemet
+        }
+
+    })
+
+    return max
     
 }
