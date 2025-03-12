@@ -522,5 +522,29 @@ export function getMax(arrayDates, format){\
     })
 
     return max
+
+}
+
+export function getMin(arrayDates, format){
+
+
+    if(arrayDates.length === 0){
+      return null
+    }
+  
+    let min = arrayDates[0]
+  
+    arrayDates.forEach((element)=>{
+      
+      const currentDate = new Date(normalizeDate(element,format))
+      const minDate = new Date()
+  
+      if(currentDate < minDate){
+        min = element
+      }
+  
+    })
+  
+    return min
     
 }
