@@ -452,7 +452,7 @@ export function compareRightnow(date,format){
 }
 
 
-export function getMax(arrayDates, format){\
+export function getMax(arrayDates, format){
 
     if(arrayDates.length === 0){
         return null
