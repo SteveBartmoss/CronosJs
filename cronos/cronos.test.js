@@ -45,10 +45,29 @@ test('getDayReference("28/02/2025","DD/MM/YYYY","es") debe retornar el dia de la
     expect(result).toBe("Viernes")
 })
 
-test('getDayReference("01/03/2025","DD/MM/YYYY","es") de retornar el dia de la semana', ()=>{
+test('getDayReference("01/03/2025","DD/MM/YYYY","es") debe retornar el dia de la semana', ()=>{
     const result = getDayReference('01/03/2025','DD/MM/YYYY','es')
     expect(result).toBe("Sábado")
 })
+
+import { isValidDate } from './cronos.js';
+
+test('isValidDate("01-01-2025","DD-MM-YYYY") debe se una fecha valida', ()=>{
+    const result = isValidDate("01-01-2025","DD-MM-YYYY")
+    expect(result).toBe(true)
+})
+
+test('isValidDate("01/01/2025","DD/MM/YYYY") debe ser una fecha valida', ()=>{
+    const result = isValidDate("01/01/2025","DD/MM/YYYY")
+    expect(result).toBe(true)
+})
+
+console.log()
+console.log(isValidDate("03-25-2025","MM-DD-YYYY"))
+console.log(isValidDate("03/25/2025","MM/DD/YYYY"))
+console.log(isValidDate("2025/01/01","YYYY/MM/DD"))
+console.log(isValidDate("2025-01-01","YYYY-MM-DD"))
+
 
 import { isLeapYear } from './cronos.js';
 
