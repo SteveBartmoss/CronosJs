@@ -84,6 +84,13 @@ test('getFirstDayOfMonth("28/02/2025","DD/MM/YYYY")', ()=>{
     expect(result).toBe('01/02/2025')
 })
 
+import { getLastDayOfMonth } from './cronos.js';
+
+test('getLastDayOfMonth("05/10/2025","DD/MM/YYYY")', ()=>{
+    const result = getLastDayOfMonth('05/10/2025','DD/MM/YYYY')
+    expect(result).toBe('31/10/2025')
+})
+
 import { isLeapYear } from './cronos.js';
 
 test('isLeapYear() debe devolver true para 2024 (año bisiesto)', () => {
