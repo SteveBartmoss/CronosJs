@@ -62,7 +62,7 @@ test('isValidDate("01/01/2025","DD/MM/YYYY") debe ser una fecha valida', ()=>{
     expect(result).toBe(true)
 })
 
-text('isValidDate("03-25-2025","MM-DD-YYYY") debe ser una fecha valida', ()=>{
+test('isValidDate("03-25-2025","MM-DD-YYYY") debe ser una fecha valida', ()=>{
     const result = isValidDate("03-25-2025","MM-DD-YYYY")
     expect(result).toBe(true)
 })
@@ -77,6 +77,12 @@ test('isValidDate("2025-01-01","YYYY-MM-DD") debe ser una fecha valida', ()=>{
     expect(result).toBe(true)
 })
 
+import { getFirstDayOfMonth } from './cronos.js';
+
+test('getFirstDayOfMonth("28/02/2025","DD/MM/YYYY")', ()=>{
+    const result = getFirstDayOfMonth('28/02/2025','DD/MM/YYYY')
+    expect(result).toBe('01/02/2025')
+})
 
 import { isLeapYear } from './cronos.js';
 
