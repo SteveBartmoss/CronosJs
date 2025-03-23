@@ -112,6 +112,18 @@ test('addMonths("01/01/2025","DD/MM/YYYY",4)', ()=>{
     expect(result).toBe('01/05/2025')
 })
 
+import { getUnitDifference } from './cronos.js';
+
+test('getUnitDifference("01/10/2025","05/10/2025","days","DD/MM/YYYY")', ()=>{
+    const result = getUnitDifference('01/10/2025','05/10/2025','days','DD/MM/YYYY')
+    expect(result).toBe(4)
+})
+
+test('getUnitDifference("01/10/2025","05-10-2025","days","DD/MM/YYYY","DD-MM-YYYY")',()=>{
+    const result = getUnitDifference('01/10/2025','05-10-2025','days','DD/MM/YYYY','DD-MM-YYYY')
+    expect(result).toBe(4)
+})
+
 import { isLeapYear } from './cronos.js';
 
 test('isLeapYear() debe devolver true para 2024 (año bisiesto)', () => {
