@@ -105,6 +105,13 @@ test('formatDate("1999-11-28","YYYY-MM-DD","DD/MM/YYYY")', ()=>{
     expect(result).toBe('28/11/1999')
 })
 
+import { addMonths } from './cronos.js';
+
+test('addMonths("01/01/2025","DD/MM/YYYY",4)', ()=>{
+    const result = addMonths("01/01/2025","DD/MM/YYYY",4)
+    expect(result).toBe('01/05/2025')
+})
+
 import { isLeapYear } from './cronos.js';
 
 test('isLeapYear() debe devolver true para 2024 (año bisiesto)', () => {
