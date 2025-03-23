@@ -98,6 +98,13 @@ test('calculateAge("28/11/1999","DD/MM/YYYY")', ()=>{
     expect(result).toBe(25)
 })
 
+import { formatDate } from './cronos.js';
+
+test('formatDate("1999-11-28","YYYY-MM-DD","DD/MM/YYYY")', ()=>{
+    const result = formatDate("1999-11-28","YYYY-MM-DD","DD/MM/YYYY")
+    expect(result).toBe('28/11/1999')
+})
+
 import { isLeapYear } from './cronos.js';
 
 test('isLeapYear() debe devolver true para 2024 (año bisiesto)', () => {
