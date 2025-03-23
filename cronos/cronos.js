@@ -236,7 +236,7 @@ export function formatDate(date, format="DD-MM-YYYY",formatFinal){
     
     const objDate = new Date(normalizeDate(date,format))
 
-    return formatUtility(objDate,format)
+    return formatUtility(objDate,formatFinal)
 
 }
 
