@@ -468,7 +468,7 @@ export function unitDateConvert(unit,typeOne,typeTwo){
 
 export function dateAddTime(date,format,unit,typeUnit){
 
-    let objDate = new Date(normalizeDate(date,format))
+    let objDate = new Date(normalizeUtility(date,format))
 
     const timeUnits = {
         milliseconds: 1,
@@ -500,8 +500,8 @@ export function sortDateArray(dateArray,format){
 
 export function getElapsedTimne(firstDate,secondDate,firstFormat,secondFormat){
 
-    const objFirst = new Date(normalizeDate(firstDate,firstFormat))
-    const objSecond = new Date(normalizeDate(secondDate,secondFormat))
+    const objFirst = new Date(normalizeUtility(firstDate,firstFormat))
+    const objSecond = new Date(normalizeUtility(secondDate,secondFormat))
 
     let diference = objSecond - objFirst
 
