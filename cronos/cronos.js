@@ -352,7 +352,7 @@ export function isLeapYear(year){
 
 export function toTimestamp(date,format,unit){
 
-    const objDate = new Date(normalizeDate(date,format))
+    const objDate = new Date(normalizeUtility(date,format))
 
     const timestamp = objDate.getTime()
 
@@ -365,12 +365,12 @@ export function compareDates(date1,date2,formatOne=null,formatTwo=null){
     let d2
 
     if(formatTwo===null){
-        d1 = new Date(normalizeDate(date1,formatOne))
-        d2 = new Date(normalizeDate(date2,formatOne))
+        d1 = new Date(normalizeUtility(date1,formatOne))
+        d2 = new Date(normalizeUtility(date2,formatOne))
     }
     else{
-        d1 = new Date(normalizeDate(date1,formatOne))
-        d2 = new Date(normalizeDate(date2,formatTwo))
+        d1 = new Date(normalizeUtility(date1,formatOne))
+        d2 = new Date(normalizeUtility(date2,formatTwo))
     }
 
     if(isNaN(d1.getTime())||isNaN(d2.getTime())){
