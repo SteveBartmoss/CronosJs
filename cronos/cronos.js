@@ -233,7 +233,7 @@ export function isValidDate(date,format){
 
 export function getFirstDayOfMonth(date,format){
 
-    const objDate = new Date(normalizeDate(date,format))
+    const objDate = new Date(normalizeUtility(date,format))
 
     const newDate = new Date(objDate.getFullYear(),objDate.getMonth(),1)
 
@@ -248,7 +248,7 @@ export function getFirstDayOfMonth(date,format){
 
 export function getLastDayOfMonth(date,format){
 
-    const objDate = new Date(normalizeDate(date,format))
+    const objDate = new Date(normalizeUtility(date,format))
 
     const newDate = new Date(objDate.getFullYear(), objDate.getMonth()+1,0)
 
@@ -264,7 +264,7 @@ export function getLastDayOfMonth(date,format){
 
 export function calculateAge(birthDate,format){
     const today = new Date()
-    const birth = new Date(normalizeDate(birthDate,format))
+    const birth = new Date(normalizeUtility(birthDate,format))
 
     let age = today.getFullYear() - birth.getFullYear()
 
