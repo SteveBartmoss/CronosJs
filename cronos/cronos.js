@@ -281,7 +281,7 @@ export function calculateAge(birthDate,format){
 
 export function formatDate(date, format="DD-MM-YYYY",formatFinal){
     
-    const objDate = new Date(normalizeDate(date,format))
+    const objDate = new Date(normalizeUtility(date,format))
 
     const day = objDate.getUTCDate()
     const month = objDate.getUTCMonth()+1
@@ -293,7 +293,7 @@ export function formatDate(date, format="DD-MM-YYYY",formatFinal){
 }
 
 export function addMonths(date,format,months){
-    const objDate = new Date(normalizeDate(date,format))
+    const objDate = new Date(normalizeUtility(date,format))
 
     const originalDay = objDate.getUTCDate()
     objDate.setUTCMonth(objDate.getUTCMonth() + months)
@@ -318,12 +318,12 @@ export function getUnitDifference(startDate, endDate, unit, startFormat=null,end
     let end
 
     if(endFormat===null){
-        start = new Date(normalizeDate(startDate,startFormat))
-        end = new Date(normalizeDate(endDate,startFormat))
+        start = new Date(normalizeUtility(startDate,startFormat))
+        end = new Date(normalizeUtility(endDate,startFormat))
     }
     else{
-        start = new Date(normalizeDate(startDate,startFormat))
-        end = new Date(normalizeDate(endDate,endFormat))
+        start = new Date(normalizeUtility(startDate,startFormat))
+        end = new Date(normalizeUtility(endDate,endFormat))
     }
 
     const difference = end - start
