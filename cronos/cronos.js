@@ -1,5 +1,7 @@
 //prototipo para normalizacion de las fechas
 
+import { normalizeUtility } from "./utils/generalUtils"
+
 function normalizeDate(date,format=null){
 
     if(typeof date !== "string"){
@@ -169,12 +171,12 @@ export function getDifference(firsDate,secondDate,firstFormat=null,secondFormat=
     let endDate
 
     if(secondFormat===null){
-        startDate = new Date(normalizeDate(firsDate,firstFormat))
-        endDate = new Date(normalizeDate(secondDate,firstFormat))
+        startDate = new Date(normalizeUtility(firsDate,firstFormat))
+        endDate = new Date(normalizeUtility(secondDate,firstFormat))
     }
     else{
-        startDate = new Date(normalizeDate(firsDate,firstFormat))
-        endDate = new Date(normalizeDate(secondDate,secondFormat))
+        startDate = new Date(normalizeUtility(firsDate,firstFormat))
+        endDate = new Date(normalizeUtility(secondDate,secondFormat))
     }
 
     let difference = endDate - startDate
