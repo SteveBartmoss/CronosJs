@@ -384,7 +384,7 @@ export function compareDates(date1,date2,formatOne=null,formatTwo=null){
 
 export function getMonthName(date,format,language='es'){
 
-    const objDate = new Date(normalizeDate(date,format))
+    const objDate = new Date(normalizeUtility(date,format))
 
     objDate.setUTCHours(12)
 
@@ -393,16 +393,16 @@ export function getMonthName(date,format,language='es'){
 
 export function isDateInRange(date,startDate,endDate,dateFormat=null,startFormat=null,endFormat=null){
 
-    const objDate = new Date(normalizeDate(date,dateFormat))
-    const start = new Date(normalizeDate(startDate,startFormat))
-    const end = new Date(normalizeDate(endDate,endFormat))
+    const objDate = new Date(normalizeUtility(date,dateFormat))
+    const start = new Date(normalizeUtility(startDate,startFormat))
+    const end = new Date(normalizeUtility(endDate,endFormat))
 
     return objDate >= start && objDate <= end
 }
 
 export function getWeekRange(date,format){
 
-    const objDate = new Date(normalizeDate(date,format))
+    const objDate = new Date(normalizeUtility(date,format))
 
     const dayOfWeek = objDate.getUTCDay()
 
