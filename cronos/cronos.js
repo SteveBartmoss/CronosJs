@@ -189,7 +189,7 @@ export function getDifference(firsDate,secondDate,firstFormat=null,secondFormat=
 
 export function addDays(date,format,days){
 
-    let objDate = new Date(normalizeDate(date,format))
+    let objDate = new Date(normalizeUtility(date,format))
 
     if(isNaN(days)){
         throw new Error("days must be a number")
@@ -210,7 +210,7 @@ export function addDays(date,format,days){
 
 export function getDayReference(date,format,language='es'){
 
-    const objDate = new Date(normalizeDate(date,format))
+    const objDate = new Date(normalizeUtility(date,format))
 
     const days = {
         en: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
@@ -228,7 +228,7 @@ export function getDayReference(date,format,language='es'){
 }
 
 export function isValidDate(date,format){
-    return !isNaN(new Date(normalizeDate(date,format)).getTime())
+    return !isNaN(new Date(normalizeUtility(date,format)).getTime())
 }
 
 export function getFirstDayOfMonth(date,format){
