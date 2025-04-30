@@ -1,6 +1,6 @@
 //prototipo para normalizacion de las fechas
 
-import { normalizeUtility } from "./utils/generalUtils"
+import { normalizeUtility } from "./utils/generalUtils.js"
 
 function normalizeDate(date,format=null){
 
