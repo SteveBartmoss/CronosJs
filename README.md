@@ -227,7 +227,7 @@ La edad que corresponde a la fecha de nacimiento
 recibe una fecha y el formato deseado, devuelve la fecha con el formato que se indico
 
 ```js
-    calculateAge(date,format,formatFinal)
+    formatDate(date,format,formatFinal)
 ```
 ### Parametros
 
