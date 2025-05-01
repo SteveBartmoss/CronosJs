@@ -174,7 +174,7 @@ export function getFirstDayOfMonth(date,format){
     const newDate = new Date(objDate.getFullYear(),objDate.getMonth(),1)
 
     return formatUtility(newDate,format)
-    
+
 }
 
 export function getLastDayOfMonth(date,format){
@@ -183,13 +183,7 @@ export function getLastDayOfMonth(date,format){
 
     const newDate = new Date(objDate.getFullYear(), objDate.getMonth()+1,0)
 
-    const day = newDate.getUTCDate()
-    const month = newDate.getUTCMonth()+1
-    const year = newDate.getUTCFullYear()
-
-    const pad = (number) => (number < 10 ? "0"+number : number)
-
-    return format.replace("DD",pad(day)).replace("MM",pad(month)).replace("YYYY",pad(year))
+    return formatUtility(newDate,format)
 
 }
 
@@ -214,13 +208,8 @@ export function formatDate(date, format="DD-MM-YYYY",formatFinal){
     
     const objDate = new Date(normalizeUtility(date,format))
 
-    const day = objDate.getUTCDate()
-    const month = objDate.getUTCMonth()+1
-    const year = objDate.getUTCFullYear()
-
-    const pad = (number) => (number < 10 ? "0"+number : number)
-
-    return formatFinal.replace("DD",pad(day)).replace("MM",pad(month)).replace("YYYY",pad(year))
+    return formatUtility(objDate,formatFinal)
+    
 }
 
 export function addMonths(date,format,months){
