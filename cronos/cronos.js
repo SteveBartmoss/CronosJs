@@ -1,6 +1,6 @@
 //prototipo para normalizacion de las fechas
 
-import { normalizeUtility } from "./utils/generalUtils.js"
+import { formatUtility, normalizeUtility } from "./utils/generalUtils.js"
 
 function normalizeDate(date,format=null){
 
@@ -139,13 +139,7 @@ export function addDays(date,format,days){
 
     let newDate = new Date(objDate.getTime() + (days*24*60*60*1000))
 
-    const day = newDate.getUTCDate()
-    const month = newDate.getUTCMonth()+1
-    const year = newDate.getUTCFullYear()
-
-    const pad = (number) => (number < 10 ? "0"+number : number)
-
-    return format.replace("DD",pad(day)).replace("MM",pad(month)).replace("YYYY",pad(year))
+    return formatUtility(newDate,format)
 
 }
 
@@ -179,13 +173,8 @@ export function getFirstDayOfMonth(date,format){
 
     const newDate = new Date(objDate.getFullYear(),objDate.getMonth(),1)
 
-    const day = newDate.getUTCDate()
-    const month = newDate.getUTCMonth()+1
-    const year = newDate.getUTCFullYear()
+    return formatUtility(newDate,format)
 
-    const pad = (number) => (number < 10 ? "0"+number : number)
-
-    return format.replace("DD",pad(day)).replace("MM",pad(month)).replace("YYYY",pad(year))
 }
 
 export function getLastDayOfMonth(date,format){
@@ -194,13 +183,7 @@ export function getLastDayOfMonth(date,format){
 
     const newDate = new Date(objDate.getFullYear(), objDate.getMonth()+1,0)
 
-    const day = newDate.getUTCDate()
-    const month = newDate.getUTCMonth()+1
-    const year = newDate.getUTCFullYear()
-
-    const pad = (number) => (number < 10 ? "0"+number : number)
-
-    return format.replace("DD",pad(day)).replace("MM",pad(month)).replace("YYYY",pad(year))
+    return formatUtility(newDate,format)
 
 }
 
@@ -225,13 +208,8 @@ export function formatDate(date, format="DD-MM-YYYY",formatFinal){
     
     const objDate = new Date(normalizeUtility(date,format))
 
-    const day = objDate.getUTCDate()
-    const month = objDate.getUTCMonth()+1
-    const year = objDate.getUTCFullYear()
-
-    const pad = (number) => (number < 10 ? "0"+number : number)
-
-    return formatFinal.replace("DD",pad(day)).replace("MM",pad(month)).replace("YYYY",pad(year))
+    return formatUtility(objDate,formatFinal)
+    
 }
 
 export function addMonths(date,format,months){
@@ -244,13 +222,7 @@ export function addMonths(date,format,months){
         objDate.setUTCDate(0);
     }
 
-    const day = objDate.getUTCDate()
-    const month = objDate.getUTCMonth() + 1
-    const year = objDate.getUTCFullYear()
-
-    const pad = (number) => (number < 10 ? "0"+number : number)
-
-    return format.replace("DD",pad(day)).replace("MM",pad(month)).replace("YYYY",pad(year))
+    return formatUtility(objDate,format)
 
 }
 
@@ -356,17 +328,7 @@ export function getWeekRange(date,format){
     const endOfWeek = new Date(startOfWeek)
     endOfWeek.setUTCDate(startOfWeek.getUTCDate() + 6)
 
-    const dayStart = startOfWeek.getUTCDate()
-    const monthStart = startOfWeek.getUTCMonth()+1
-    const yearStart = startOfWeek.getUTCFullYear()
-
-    const dayEnd = endOfWeek.getUTCDate()
-    const monthEnd = endOfWeek.getUTCMonth()+1
-    const yearEnd = endOfWeek.getUTCFullYear()
-
-    const pad = (number) => (number < 10 ? "0"+number : number)
-
-    return { startOfWeek: format.replace("DD",pad(dayStart)).replace("MM",pad(monthStart)).replace("YYYY",pad(yearStart)), endOfWeek: format.replace("DD",pad(dayEnd)).replace("MM",pad(monthEnd)).replace("YYYY",pad(yearEnd))}
+    return { startOfWeek: formatUtility(startOfWeek,format), endOfWeek: formatUtility(endOfWeek,format)}
 
 }
 
