@@ -158,3 +158,9 @@ test('getMonthName("01/01/2025","DD/MM/YYYY","es") debe devolver enero', () => {
 test('getMonthName("01/10/2025","DD/MM/YYYY","es") debe devolver octubre',() => {
     expect(getMonthName("01/10/2025","DD/MM/YYYY","es")).toBe("octubre");
 });
+
+import { isDateInRange } from './cronos.js';
+
+test('isDateInRange("03/10/2025","01/10/2025","05/10/2025","DD/MM/YYYY","DD/MM/YYYY","DD/MM/YYYY") debe devolver true', () => {
+    expect(isDateInRange("03/10/2025","01/10/2025","05/10/2025","DD/MM/YYYY","DD/MM/YYYY","DD/MM/YYYY")).toBe(true);
+});
