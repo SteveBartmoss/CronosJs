@@ -147,3 +147,14 @@ test('compareDates() debe devolver -1 si la segunda fecha es mayor', () => {
 test('compareDates() debe devolver 0 si las fechas son iguales', () => {
     expect(compareDates("2024-02-10", "2024-02-10")).toBe(0);
 });
+
+
+import { getMonthName } from './cronos.js';
+
+test('getMonthName("01/01/2025","DD/MM/YYYY","es") debe devolver enero', () => {
+    expect(getMonthName("01/01/2025","DD/MM/YYYY","es")).toBe("enero");
+});
+
+test('getMonthName("01/10/2025","DD/MM/YYYY","es") debe devolver octubre',() => {
+    expect(getMonthName("01/10/2025","DD/MM/YYYY","es")).toBe("octubre");
+});
