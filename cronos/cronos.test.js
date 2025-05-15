@@ -164,3 +164,9 @@ import { isDateInRange } from './cronos.js';
 test('isDateInRange("03/10/2025","01/10/2025","05/10/2025","DD/MM/YYYY","DD/MM/YYYY","DD/MM/YYYY") debe devolver true', () => {
     expect(isDateInRange("03/10/2025","01/10/2025","05/10/2025","DD/MM/YYYY","DD/MM/YYYY","DD/MM/YYYY")).toBe(true);
 });
+
+import { getWeekRange } from './cronos.js';
+
+test("getWeekRange('03/01/2025','DD/MM/YYYY') debe regresar un objeto", () => {
+    expect(getWeekRange('03/01/2025','DD/MM/YYYY')).toStrictEqual({ startOfWeek: '30/12/2024', endOfWeek: '05/01/2025' });
+});
