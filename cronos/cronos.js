@@ -1,6 +1,12 @@
 //prototipo para normalizacion de las fechas
 
-import { formatUtility, normalizeDate } from "./utils/generalUtils.js"
+import { formatUtility, normalizeUtility } from "./utils/generalUtils.js"
+
+function normalizeDate(date,format=null){
+
+    return normalizeUtility(date,format)
+    
+}
 
 function merge(array, startIndex, middleIndex, endIndex, format){
     const leftSize = middleIndex - startIndex + 1
@@ -142,12 +148,12 @@ export function getDifference(firsDate,secondDate,firstFormat=null,secondFormat=
     let endDate
 
     if(secondFormat===null){
-        startDate = new Date(normalizeDate(firsDate,firstFormat))
-        endDate = new Date(normalizeDate(secondDate,firstFormat))
+        startDate = new Date(normalizeUtility(firsDate,firstFormat))
+        endDate = new Date(normalizeUtility(secondDate,firstFormat))
     }
     else{
-        startDate = new Date(normalizeDate(firsDate,firstFormat))
-        endDate = new Date(normalizeDate(secondDate,secondFormat))
+        startDate = new Date(normalizeUtility(firsDate,firstFormat))
+        endDate = new Date(normalizeUtility(secondDate,secondFormat))
     }
 
     let difference = endDate - startDate
@@ -160,7 +166,7 @@ export function getDifference(firsDate,secondDate,firstFormat=null,secondFormat=
 
 export function addDays(date,format,days){
 
-    let objDate = new Date(normalizeDate(date,format))
+    let objDate = new Date(normalizeUtility(date,format))
 
     if(isNaN(days)){
         throw new Error("days must be a number")
@@ -175,7 +181,7 @@ export function addDays(date,format,days){
 
 export function getDayReference(date,format,language='es'){
 
-    const objDate = new Date(normalizeDate(date,format))
+    const objDate = new Date(normalizeUtility(date,format))
 
     const days = {
         en: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
@@ -193,12 +199,12 @@ export function getDayReference(date,format,language='es'){
 }
 
 export function isValidDate(date,format){
-    return !isNaN(new Date(normalizeDate(date,format)).getTime())
+    return !isNaN(new Date(normalizeUtility(date,format)).getTime())
 }
 
 export function getFirstDayOfMonth(date,format){
 
-    const objDate = new Date(normalizeDate(date,format))
+    const objDate = new Date(normalizeUtility(date,format))
 
     const newDate = new Date(objDate.getFullYear(),objDate.getMonth(),1)
 
@@ -207,7 +213,7 @@ export function getFirstDayOfMonth(date,format){
 
 export function getLastDayOfMonth(date,format){
 
-    const objDate = new Date(normalizeDate(date,format))
+    const objDate = new Date(normalizeUtility(date,format))
 
     const newDate = new Date(objDate.getFullYear(), objDate.getMonth()+1,0)
 
@@ -217,7 +223,7 @@ export function getLastDayOfMonth(date,format){
 
 export function calculateAge(birthDate,format){
     const today = new Date()
-    const birth = new Date(normalizeDate(birthDate,format))
+    const birth = new Date(normalizeUtility(birthDate,format))
 
     let age = today.getFullYear() - birth.getFullYear()
 
@@ -234,14 +240,14 @@ export function calculateAge(birthDate,format){
 
 export function formatDate(date, format="DD-MM-YYYY",formatFinal){
     
-    const objDate = new Date(normalizeDate(date,format))
+    const objDate = new Date(normalizeUtility(date,format))
 
     return formatUtility(objDate,formatFinal)
-
+    
 }
 
 export function addMonths(date,format,months){
-    const objDate = new Date(normalizeDate(date,format))
+    const objDate = new Date(normalizeUtility(date,format))
 
     const originalDay = objDate.getUTCDate()
     objDate.setUTCMonth(objDate.getUTCMonth() + months)
@@ -260,12 +266,12 @@ export function getUnitDifference(startDate, endDate, unit, startFormat=null,end
     let end
 
     if(endFormat===null){
-        start = new Date(normalizeDate(startDate,startFormat))
-        end = new Date(normalizeDate(endDate,startFormat))
+        start = new Date(normalizeUtility(startDate,startFormat))
+        end = new Date(normalizeUtility(endDate,startFormat))
     }
     else{
-        start = new Date(normalizeDate(startDate,startFormat))
-        end = new Date(normalizeDate(endDate,endFormat))
+        start = new Date(normalizeUtility(startDate,startFormat))
+        end = new Date(normalizeUtility(endDate,endFormat))
     }
 
     const difference = end - start
@@ -294,7 +300,7 @@ export function isLeapYear(year){
 
 export function toTimestamp(date,format,unit){
 
-    const objDate = new Date(normalizeDate(date,format))
+    const objDate = new Date(normalizeUtility(date,format))
 
     const timestamp = objDate.getTime()
 
@@ -307,12 +313,12 @@ export function compareDates(date1,date2,formatOne=null,formatTwo=null){
     let d2
 
     if(formatTwo===null){
-        d1 = new Date(normalizeDate(date1,formatOne))
-        d2 = new Date(normalizeDate(date2,formatOne))
+        d1 = new Date(normalizeUtility(date1,formatOne))
+        d2 = new Date(normalizeUtility(date2,formatOne))
     }
     else{
-        d1 = new Date(normalizeDate(date1,formatOne))
-        d2 = new Date(normalizeDate(date2,formatTwo))
+        d1 = new Date(normalizeUtility(date1,formatOne))
+        d2 = new Date(normalizeUtility(date2,formatTwo))
     }
 
     if(isNaN(d1.getTime())||isNaN(d2.getTime())){
@@ -326,7 +332,7 @@ export function compareDates(date1,date2,formatOne=null,formatTwo=null){
 
 export function getMonthName(date,format,language='es'){
 
-    const objDate = new Date(normalizeDate(date,format))
+    const objDate = new Date(normalizeUtility(date,format))
 
     objDate.setUTCHours(12)
 
@@ -335,16 +341,16 @@ export function getMonthName(date,format,language='es'){
 
 export function isDateInRange(date,startDate,endDate,dateFormat=null,startFormat=null,endFormat=null){
 
-    const objDate = new Date(normalizeDate(date,dateFormat))
-    const start = new Date(normalizeDate(startDate,startFormat))
-    const end = new Date(normalizeDate(endDate,endFormat))
+    const objDate = new Date(normalizeUtility(date,dateFormat))
+    const start = new Date(normalizeUtility(startDate,startFormat))
+    const end = new Date(normalizeUtility(endDate,endFormat))
 
     return objDate >= start && objDate <= end
 }
 
 export function getWeekRange(date,format){
 
-    const objDate = new Date(normalizeDate(date,format))
+    const objDate = new Date(normalizeUtility(date,format))
 
     const dayOfWeek = objDate.getUTCDay()
 
@@ -356,7 +362,7 @@ export function getWeekRange(date,format){
     const endOfWeek = new Date(startOfWeek)
     endOfWeek.setUTCDate(startOfWeek.getUTCDate() + 6)
 
-    return {startOfWeek: formatUtility(startOfWeek,format), endOfWeek: formatUtility(endOfWeek,format)}
+    return { startOfWeek: formatUtility(startOfWeek,format), endOfWeek: formatUtility(endOfWeek,format)}
 
 }
 
@@ -399,7 +405,7 @@ export function unitDateConvert(unit,typeOne,typeTwo){
 
 export function dateAddTime(date,format,unit,typeUnit){
 
-    let objDate = new Date(normalizeDate(date,format))
+    let objDate = new Date(normalizeUtility(date,format))
 
     const timeUnits = {
         milliseconds: 1,
@@ -431,8 +437,8 @@ export function sortDateArray(dateArray,format){
 
 export function getElapsedTimne(firstDate,secondDate,firstFormat,secondFormat){
 
-    const objFirst = new Date(normalizeDate(firstDate,firstFormat))
-    const objSecond = new Date(normalizeDate(secondDate,secondFormat))
+    const objFirst = new Date(normalizeUtility(firstDate,firstFormat))
+    const objSecond = new Date(normalizeUtility(secondDate,secondFormat))
 
     let diference = objSecond - objFirst
 

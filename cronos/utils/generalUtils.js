@@ -1,7 +1,6 @@
 
+export function normalizeUtility(date,format=null){
 
-export function normalizeDate(date,format=null){
-    
     if(typeof date !== "string"){
         throw new Error("Date must be a string")
     }
@@ -48,7 +47,7 @@ export function normalizeDate(date,format=null){
     }    
 
     return refactorDate
-
+    
 }
 
 export function formatUtility(date,format){
