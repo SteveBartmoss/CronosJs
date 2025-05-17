@@ -182,3 +182,9 @@ import { unitTimeConvert } from './cronos.js';
 test("unitTimeConvert(1747510941780,'milliseconds','seconds') debe regresar el tiempo en segundos", () => {
     expect(unitTimeConvert(1747510941780,'milliseconds','seconds')).toBe(1747510941.78)
 });
+
+import { unitDateConvert } from './cronos.js';
+
+test("unitDateConvert(1,'years','days') debe regrear los dias equivalente a un anio", () => {
+    expect(unitDateConvert(1,'years','days')).toBe(365.25)
+});
