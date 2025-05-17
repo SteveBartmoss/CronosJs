@@ -1,4 +1,4 @@
-import { addDays, addMonths, calculateAge, compareDates, formatDate, getDateNow, getDayReference, getDifference, getFirstDayOfMonth, getLastDayOfMonth, getMonthName, getUnitDifference, getWeekRange, isDateInRange, isValidDate, timestampToDate, toTimestamp } from "./cronos/cronos.js";
+import { addDays, addMonths, calculateAge, compareDates, formatDate, getDateNow, getDayReference, getDifference, getFirstDayOfMonth, getLastDayOfMonth, getMonthName, getUnitDifference, getWeekRange, isDateInRange, isValidDate, timestampToDate, toTimestamp, unitTimeConvert } from "./cronos/cronos.js";
 
 //console.log(getDateNow('SQL'))
 
@@ -51,4 +51,8 @@ console.log(dateNow.getTime())
 
 console.log(timestampToDate(1747510941780))
 
+console.log(unitTimeConvert(1747510941780,'milliseconds','seconds'))
 
+console.log(unitTimeConvert(1747510941780,'milliseconds','minutes'))
+
+console.log(unitTimeConvert(1747510941780,'milliseconds','hours'))
