@@ -526,6 +526,40 @@ Los formatos aceptados son:
 - "MM-DD-YYYY" 
 - "YYYY-MM-DD"
 
+### unitTimeConvert
+
+Esta funcion toma un valor numerico que esta en una unidad de tiempo y la convierte a otra unidad de tiempo
+
+```js
+    unitTimeConvert(unit,typeOne,typeTwo)
+```
+
+### Parametros
+
+**unit**
+
+- valor numero que quiere convertir
+
+**typeOne**
+
+- unidad de tiempo del valor que se quiere convertir
+
+**typeTwo**
+
+- unidad de tiempo en que se quiere el resultado
+
+Las unidades de tiempo aceptadas son:
+
+- "milliseconds"
+- "seconds"
+- "minutes"
+- "hours"
+
+
+### Retorno
+
+Regresa el valor numerico en la nueva unidad de tiempo
+
 ## EN
 
 Library to work with dates in JavaScript
