@@ -73,29 +73,29 @@ export function calculateRelativeTime(diference){
     const years = days/365
 
     if(seconds<60){
-        return seconds === 1 ? 'Hace un segundo' : `Hace ${Math.floor(seconds)} segundos`
+        return Math.floor(seconds) === 1 ? 'Hace un segundo' : `Hace ${Math.floor(seconds)} segundos`
     }
 
     if(minutes<60){
-        return minutes === 1 ? 'Hace un minuto' : `Hace ${Math.floor(minutes)} minutos`
+        return Math.floor(minutes) === 1 ? 'Hace un minuto' : `Hace ${Math.floor(minutes)} minutos`
     }
 
     if(hours<24){
-        return hours === 1 ? 'Hace una hora' : `Hace ${Math.floor(houres)} horas`
+        return Math.floor(hours) === 1 ? 'Hace una hora' : `Hace ${Math.floor(houres)} horas`
     }
 
     if(days<7){
-        return days === 1 ? 'Hace un dia' : `Hace ${Math.floor(days)} días`
+        return Math.floor(days) === 1 ? 'Hace un dia' : `Hace ${Math.floor(days)} días`
     }
 
     if(weeks<4){
-        return weeks === 1 ? 'Hace una semana' : `Hace ${Math.floor(weeks)} semanas`
+        return Math.floor(weeks) === 1 ? 'Hace una semana' : `Hace ${Math.floor(weeks)} semanas`
     }
 
     if(months<12){
-        return months === 1 ? 'Hace un mes' : `Hace ${Math.floor(months)} meses`
+        return Math.floor(months) === 1 ? 'Hace un mes' : `Hace ${Math.floor(months)} meses`
     }
 
-    return years === 1 ? 'Hace un año' : `Hace ${Math.floor(years)} años`
-    
+    return Math.floor(years) === 1 ? 'Hace un año' : `Hace ${Math.floor(years)} años`
+
 }
