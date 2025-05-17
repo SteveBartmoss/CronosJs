@@ -176,3 +176,9 @@ import { timestampToDate } from './cronos.js';
 test("timestampToDate(1747510941780) debe regresar una fecha", () => {
     expect(timestampToDate(1747510941780)).toBe('2025-05-17T19:42:21.780Z');
 });
+
+import { unitTimeConvert } from './cronos.js';
+
+test("unitTimeConvert(1747510941780,'milliseconds','seconds') debe regresar el tiempo en segundos", () => {
+    expect(unitTimeConvert(1747510941780,'milliseconds','seconds')).toBe(1747510941.78)
+});
