@@ -303,9 +303,9 @@ export function getMonthName(date,format,language='es'){
 
 export function isDateInRange(date,startDate,endDate,dateFormat=null,startFormat=null,endFormat=null){
 
-    const objDate = new Date(normalizeUtility(date,dateFormat))
-    const start = new Date(normalizeUtility(startDate,startFormat))
-    const end = new Date(normalizeUtility(endDate,endFormat))
+    const objDate = new Date(DateUtils.normalizeDate(date,dateFormat))
+    const start = new Date(DateUtils.normalizeDate(startDate,startFormat))
+    const end = new Date(DateUtils.normalizeDate(endDate,endFormat))
 
     return objDate >= start && objDate <= end
 }
