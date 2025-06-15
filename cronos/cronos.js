@@ -294,7 +294,7 @@ export function compareDates(date1,date2,formatOne=null,formatTwo=null){
 
 export function getMonthName(date,format,language='es'){
 
-    const objDate = new Date(normalizeUtility(date,format))
+    const objDate = new Date(DateUtils.normalizeDate(date,format))
 
     objDate.setUTCHours(12)
 
