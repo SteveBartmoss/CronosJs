@@ -395,7 +395,7 @@ export function dateAddTime(date,format,unit,typeUnit){
         newDate.setFullYear(newDate.getFullYear() + unit)
     }
 
-    return formatUtility(newDate,format)
+    return DateUtils.normalizeDate(newDate,format)
 
 }
 
