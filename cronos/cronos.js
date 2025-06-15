@@ -228,12 +228,12 @@ export function getUnitDifference(startDate, endDate, unit, startFormat=null,end
     let end
 
     if(endFormat===null){
-        start = new Date(normalizeUtility(startDate,startFormat))
-        end = new Date(normalizeUtility(endDate,startFormat))
+        start = new Date(DateUtils.normalizeDate(startDate,startFormat))
+        end = new Date(DateUtils.normalizeDate(endDate,startFormat))
     }
     else{
-        start = new Date(normalizeUtility(startDate,startFormat))
-        end = new Date(normalizeUtility(endDate,endFormat))
+        start = new Date(DateUtils.normalizeDate(startDate,startFormat))
+        end = new Date(DateUtils.normalizeDate(endDate,endFormat))
     }
 
     const difference = end - start
