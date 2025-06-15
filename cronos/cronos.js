@@ -202,7 +202,7 @@ export function calculateAge(birthDate,format){
 
 export function formatDate(date, format="DD-MM-YYYY",formatFinal){
     
-    const objDate = new Date(normalizeUtility(date,format))
+    const objDate = new Date(DateUtils.normalizeDate(date,format))
 
     return DateUtils.formatDate(objDate,formatFinal)
     
