@@ -14,6 +14,16 @@ export class DateUtils{
 
     static normalizeDate(date,format=null){
 
+        if(typeof date !== "string"){
+            throw new Error("Date must be a string")
+        }
+
+        const parts = date.split(/[-\/]/)
+
+        if(parts.length !== 3){
+            throw new Error('Invalid date format')
+        }
+
         if(format in this.formatMap){
             const [y,m,d] = this.formatMap[format].map(i => parts[i])
 
