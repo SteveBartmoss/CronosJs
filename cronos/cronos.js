@@ -410,7 +410,7 @@ export function getElapsedTimne(firstDate,secondDate,firstFormat,secondFormat){
 
 export function compareRightnow(date,format){
 
-    const objDate = new Date(normalizeDate(date,format))
+    const objDate = new Date(DateUtils.normalizeDate(date,format))
     const dateNow = new Date()
 
     if(objDate>dateNow) 1
