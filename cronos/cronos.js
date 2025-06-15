@@ -429,8 +429,8 @@ export function getMax(arrayDates, format){
     let max = arrayDates[0]
 
     arrayDates.forEach((element)=>{
-        const currentDate = new Date(normalizeDate(element,format))
-        const maxDate = new Date(normalizeDate(max,format))
+        const currentDate = new Date(DateUtils.normalizeDate(element,format))
+        const maxDate = new Date(DateUtils.normalizeDate(max,format))
 
         if(currentDate > maxDate){
             max = elemet
