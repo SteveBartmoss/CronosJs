@@ -160,7 +160,7 @@ export function getDayReference(date,format,language='es'){
 }
 
 export function isValidDate(date,format){
-    return !isNaN(new Date(normalizeUtility(date,format)).getTime())
+    return !isNaN(new Date(DateUtils.normalizeDate(date,format)).getTime())
 }
 
 export function getFirstDayOfMonth(date,format){
