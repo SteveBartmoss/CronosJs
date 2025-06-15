@@ -185,7 +185,7 @@ export function getLastDayOfMonth(date,format){
 
 export function calculateAge(birthDate,format){
     const today = new Date()
-    const birth = new Date(normalizeUtility(birthDate,format))
+    const birth = new Date(DateUtils.normalizeDate(birthDate,format))
 
     let age = today.getFullYear() - birth.getFullYear()
 
