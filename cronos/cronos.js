@@ -209,7 +209,7 @@ export function formatDate(date, format="DD-MM-YYYY",formatFinal){
 }
 
 export function addMonths(date,format,months){
-    const objDate = new Date(normalizeUtility(date,format))
+    const objDate = new Date(DateUtils.normalizeDate(date,format))
 
     const originalDay = objDate.getUTCDate()
     objDate.setUTCMonth(objDate.getUTCMonth() + months)
