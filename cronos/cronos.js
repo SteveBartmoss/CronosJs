@@ -3,12 +3,6 @@
 import { DateUtils } from "./utils/dateUtils.js"
 import { calculateRelativeTime, formatUtility, normalizeUtility } from "./utils/generalUtils.js"
 
-function normalizeDate(date,format=null){
-
-    return normalizeUtility(date,format)
-    
-}
-
 function merge(array, startIndex, middleIndex, endIndex, format){
     const leftSize = middleIndex - startIndex + 1
     const rightSize = endIndex - middleIndex
