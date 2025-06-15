@@ -210,7 +210,7 @@ export function formatDate(date, format="DD-MM-YYYY",formatFinal){
     
     const objDate = new Date(normalizeUtility(date,format))
 
-    return formatUtility(objDate,formatFinal)
+    return DateUtils.formatDate(objDate,formatFinal)
     
 }
 
