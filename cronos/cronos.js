@@ -312,7 +312,7 @@ export function isDateInRange(date,startDate,endDate,dateFormat=null,startFormat
 
 export function getWeekRange(date,format){
 
-    const objDate = new Date(normalizeUtility(date,format))
+    const objDate = new Date(DateUtils.normalizeDate(date,format))
 
     const dayOfWeek = objDate.getUTCDay()
 
@@ -324,7 +324,7 @@ export function getWeekRange(date,format){
     const endOfWeek = new Date(startOfWeek)
     endOfWeek.setUTCDate(startOfWeek.getUTCDate() + 6)
 
-    return { startOfWeek: formatUtility(startOfWeek,format), endOfWeek: formatUtility(endOfWeek,format)}
+    return { startOfWeek: DateUtils.formatDate(startOfWeek,format), endOfWeek: DateUtils.formatDate(endOfWeek,format)}
 
 }
 
