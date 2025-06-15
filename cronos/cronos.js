@@ -367,7 +367,7 @@ export function unitDateConvert(unit,typeOne,typeTwo){
 
 export function dateAddTime(date,format,unit,typeUnit){
 
-    let objDate = new Date(normalizeUtility(date,format))
+    let objDate = new Date(DateUtils.normalizeDate(date,format))
 
     const timeUnits = {
         milliseconds: 1,
