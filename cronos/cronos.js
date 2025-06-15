@@ -399,8 +399,8 @@ export function sortDateArray(dateArray,format){
 
 export function getElapsedTimne(firstDate,secondDate,firstFormat,secondFormat){
 
-    const objFirst = new Date(normalizeUtility(firstDate,firstFormat))
-    const objSecond = new Date(normalizeUtility(secondDate,secondFormat))
+    const objFirst = new Date(DateUtils.normalizeDate(firstDate,firstFormat))
+    const objSecond = new Date(DateUtils.normalizeDate(secondDate,secondFormat))
 
     let diference = objSecond - objFirst
 
