@@ -1,5 +1,6 @@
 //prototipo para normalizacion de las fechas
 
+import { DateUtils } from "./utils/dateUtils.js"
 import { calculateRelativeTime, formatUtility, normalizeUtility } from "./utils/generalUtils.js"
 
 function normalizeDate(date,format=null){
@@ -140,7 +141,7 @@ export function addDays(date,format,days){
 
     let newDate = new Date(objDate.getTime() + (days*24*60*60*1000))
 
-    return formatUtility(newDate,format)
+    return DateUtils.formatDate(newDate,format)
 
 }
 
