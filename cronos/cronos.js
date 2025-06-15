@@ -175,7 +175,8 @@ export function getFirstDayOfMonth(date,format){
 
     const newDate = new Date(objDate.getFullYear(),objDate.getMonth(),1)
 
-    return formatUtility(newDate,format)
+    return DateUtils.formatDate(newDate,format)
+    
 }
 
 export function getLastDayOfMonth(date,format){
