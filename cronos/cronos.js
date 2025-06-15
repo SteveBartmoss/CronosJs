@@ -142,7 +142,7 @@ export function addDays(date,format,days){
 
 export function getDayReference(date,format,language='es'){
 
-    const objDate = new Date(normalizeUtility(date,format))
+    const objDate = new Date(DateUtils.normalizeDate(date,format))
 
     const days = {
         en: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
