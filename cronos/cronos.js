@@ -1,7 +1,7 @@
 //prototipo para normalizacion de las fechas
 
 import { DateUtils } from "./utils/dateUtils.js"
-import { calculateRelativeTime, formatUtility, normalizeUtility } from "./utils/generalUtils.js"
+import { calculateRelativeTime } from "./utils/generalUtils.js"
 
 function merge(array, startIndex, middleIndex, endIndex, format){
     const leftSize = middleIndex - startIndex + 1
