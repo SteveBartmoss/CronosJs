@@ -127,7 +127,7 @@ export function getDifference(firsDate,secondDate,firstFormat=null,secondFormat=
 
 export function addDays(date,format,days){
 
-    let objDate = new Date(normalizeUtility(date,format))
+    let objDate = new Date(DateUtils.normalizeDate(date,format))
 
     if(isNaN(days)){
         throw new Error("days must be a number")
