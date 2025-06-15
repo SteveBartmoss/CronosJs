@@ -453,7 +453,7 @@ export function getMin(arrayDates, format){
   
     arrayDates.forEach((element)=>{
       
-      const currentDate = new Date(normalizeDate(element,format))
+      const currentDate = new Date(DateUtils.normalizeDate(element,format))
       const minDate = new Date()
   
       if(currentDate < minDate){
