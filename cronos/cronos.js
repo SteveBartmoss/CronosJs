@@ -165,7 +165,7 @@ export function isValidDate(date,format){
 
 export function getFirstDayOfMonth(date,format){
 
-    const objDate = new Date(normalizeUtility(date,format))
+    const objDate = new Date(DateUtils.normalizeDate(date,format))
 
     const newDate = new Date(objDate.getFullYear(),objDate.getMonth(),1)
 
