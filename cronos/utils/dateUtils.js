@@ -12,7 +12,7 @@ export class DateUtils{
         "YYYY-DD-MM": [0,2,1],
     }
 
-    static normalizeUtility(date,format=null){
+    static normalizeDate(date,format=null){
 
         if(format in this.formatMap){
             const [y,m,d] = this.formatMap[format].map(i => parts[i])
@@ -44,7 +44,7 @@ export class DateUtils{
         
     }
 
-    static formantUtility(date,format){
+    static formatDate(date,format){
 
         const day = date.getUTCDate()
         const month = date.getUTCMonth()+1
