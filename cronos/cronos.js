@@ -109,12 +109,12 @@ export function getDifference(firsDate,secondDate,firstFormat=null,secondFormat=
     let endDate
 
     if(secondFormat===null){
-        startDate = new Date(normalizeUtility(firsDate,firstFormat))
-        endDate = new Date(normalizeUtility(secondDate,firstFormat))
+        startDate = new Date(DateUtils.normalizeDate(firsDate,firstFormat))
+        endDate = new Date(DateUtils.normalizeDate(secondDate,firstFormat))
     }
     else{
-        startDate = new Date(normalizeUtility(firsDate,firstFormat))
-        endDate = new Date(normalizeUtility(secondDate,secondFormat))
+        startDate = new Date(DateUtils.normalizeDate(firsDate,firstFormat))
+        endDate = new Date(DateUtils.normalizeDate(secondDate,secondFormat))
     }
 
     let difference = endDate - startDate
