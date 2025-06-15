@@ -262,7 +262,7 @@ export function isLeapYear(year){
 
 export function toTimestamp(date,format,unit){
 
-    const objDate = new Date(normalizeUtility(date,format))
+    const objDate = new Date(DateUtils.normalizeDate(date,format))
 
     const timestamp = objDate.getTime()
 
