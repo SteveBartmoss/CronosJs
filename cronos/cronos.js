@@ -224,7 +224,7 @@ export function addMonths(date,format,months){
         objDate.setUTCDate(0);
     }
 
-    return formatUtility(objDate,format)
+    return DateUtils.formatDate(objDate,format)
 
 }
 
