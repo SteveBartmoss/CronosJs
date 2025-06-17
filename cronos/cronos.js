@@ -368,7 +368,7 @@ export function getMax(arrayDates, format){
         const maxDate = new Date(DateUtils.normalizeDate(max,format))
 
         if(currentDate > maxDate){
-            max = elemet
+            max = element
         }
 
     })
