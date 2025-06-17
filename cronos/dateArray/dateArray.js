@@ -73,5 +73,21 @@ export class DateArray{
         })
     }
 
-    
+    fillDateArray(start,end){
+
+        let dateStart = Date(DateUtils.normalizeDate(start,this.format))
+        let dateEnd = Date(DateUtils.normalizeDate(end,this.format))
+
+        let currentDate = dateStart
+
+        while(currentDate<dateEnd){
+            this.listDates.push(currentDate)
+
+            currentDate = Date(currentDate.getTime() + (24*60*60*1000))
+
+        }
+
+        this.listDates.push(dateEnd)
+    }
+
 }
