@@ -63,6 +63,15 @@ export class DateArray{
         this.mergeSortDate(startIndex,middleIndex)
         this.mergeSortDate(middleIndex, endIndex)
         this.merge(startIndex, middleIndex, endIndex)
-        
+
     }
+
+    showDateArray(){
+
+        this.listDates.forEach(element => {
+            console.log(element)
+        })
+    }
+
+    
 }
