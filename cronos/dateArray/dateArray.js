@@ -112,4 +112,23 @@ export class DateArray{
         return min
     }
 
+    getMax(){
+
+        if(this.listDates){
+            return null
+        }
+
+        let max = this.listDates[0]
+
+        this.listDates.forEach((element) =>{
+            const currentDate = new Date(DateUtils.normalizeDate(element, this.format))
+            const maxDate = new Date(DateUtils.normalizeDate(max,this.format))
+
+            if(currentDate > maxDate){
+                max = element
+            }
+            
+        })
+    }
+
 }
