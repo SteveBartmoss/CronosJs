@@ -81,13 +81,14 @@ export class DateArray{
         let currentDate = dateStart
 
         while(currentDate<dateEnd){
-            this.listDates.push(currentDate)
+            this.listDates.push(DateUtils.formatDate(currentDate,this.format))
 
             currentDate = Date(currentDate.getTime() + (24*60*60*1000))
 
         }
 
-        this.listDates.push(dateEnd)
+        this.listDates.push(DateUtils.formatDate(dateEnd,this.format))
+        
     }
 
 }
