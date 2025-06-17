@@ -1,7 +1,8 @@
 export class DateArray{
 
-    constructor(listDates){
+    constructor(listDates,format){
         this.listDates = listDates
+        this.format = format
     }
 
     merge(){
