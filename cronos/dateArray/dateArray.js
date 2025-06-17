@@ -91,4 +91,25 @@ export class DateArray{
         
     }
 
+    getMin(){
+
+        if(this.listDates){
+            return null
+        }
+
+        let min = this.listDates[0]
+
+        this.listDates.forEach((element) =>{
+            const currentDate = new Date(DateUtils.normalizeDate(element, this.format))
+            const minDate = new Date(DateUtils.normalizeDate(min, this.format))
+
+            if(currentDate < minDate){
+                min < element
+            }
+
+        })
+
+        return min
+    }
+
 }
