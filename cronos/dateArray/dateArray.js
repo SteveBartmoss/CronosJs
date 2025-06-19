@@ -91,7 +91,7 @@ export class DateArray{
         
     }
 
-    getMin(){
+    getOldest(){
 
         if(this.listDates){
             return null
@@ -112,7 +112,7 @@ export class DateArray{
         return min
     }
 
-    getMax(){
+    getNewer(){
 
         if(this.listDates){
             return null
