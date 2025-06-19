@@ -131,4 +131,17 @@ export class DateArray{
         })
     }
 
+    getDaysOfArray(){
+
+        const startDate = new Date(DateUtils.normalizeDate(this.listDates[0],this.format))
+        const endDate = new Date(DateUtils.normalizeDate(this.listDates[this.listDates.length-1],this.format))
+
+        let diference = endDate - startDate
+
+        diference = diference / (1000 * 60 * 60 * 24)
+
+        return Math.round(diference)
+        
+    }
+
 }
