@@ -1,4 +1,4 @@
-# CronosJs 1.16.17 (Alfa)
+# CronosJs 1.20.24 (Alfa)
 
 - [Documentacion espanol](#ES)
 - [Documentacion ingles](#EN)
