@@ -2,6 +2,9 @@
 
 import { DateUtils } from "./utils/dateUtils.js"
 import { calculateRelativeTime } from "./utils/generalUtils.js"
+import { DateArray } from "./dateArray/dateArray.js"
+
+export {DateArray}
 
 export function getDateNow(formatDate) {
 
