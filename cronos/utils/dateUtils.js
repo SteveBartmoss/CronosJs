@@ -12,6 +12,13 @@ export class DateUtils{
         "YYYY-DD-MM": [0,2,1],
     }
 
+    static formatMapTime = {
+        "h:mm:ss m": [],
+        "hh:mm m": [],
+        "hh:mm:ss" : [],
+        "hh:MM" : [],
+    }
+
     static normalizeDate(date,format=null){
 
         if(typeof date !== "string"){
