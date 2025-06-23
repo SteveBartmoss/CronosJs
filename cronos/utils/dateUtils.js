@@ -16,7 +16,7 @@ export class DateUtils{
         "h:mm:ss m": [],
         "hh:mm m": [],
         "hh:mm:ss" : [],
-        "hh:MM" : [],
+        "hh:mm": [],
     }
 
     static normalizeDate(date,format=null){
