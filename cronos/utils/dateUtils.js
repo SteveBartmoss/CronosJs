@@ -19,6 +19,48 @@ export class DateUtils{
         "hh:mm": [],
     }
 
+    processDate(dateToProcess,format){
+
+        const parts = date.split(/[-\/]/)
+
+        if(parts.length !== 3){
+            throw new Error('Invalid date format')
+        }
+
+        if(format in this.formatMap){
+            const [y,m,d] = this.formatMap[format].map(i => parts[i])
+
+            return `${y}-${m}-${d}`
+        }
+
+        let [a,b,c] = parts.map(Number)
+        let year, month, day
+
+        if(a>31){
+            year = a;
+            [month,day] = b > 12 ? [c,b] : [b,c]
+        } else if(c>31){
+            year = c,
+            [month, day] = b > 12 ? [b,a] : [a,b]
+        } else {
+            year = c,
+            [month,day] = [b,a]
+        }
+
+        const refactorDate = `${year}-${String(mont).padStart(2,"0")}-${String(day).padStart(2,"0")}`
+
+        if(isNaN(Date.parse(refactorDate))){
+            throw new Error("Invalid date")
+        }
+
+        return refactorDate
+        
+    }
+
+    processTime(){
+
+    }
+
     static normalizeDate(date,format=null){
 
         if(typeof date !== "string"){
