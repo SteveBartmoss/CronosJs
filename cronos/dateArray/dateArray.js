@@ -1,4 +1,5 @@
-import { DateUtils } from "../utils/dateUtils"
+import { DateUtils } from "../utils/dateUtils.js"
+
 
 export class DateArray{
 
