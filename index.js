@@ -70,3 +70,7 @@ const dateList = new DateArray([],'DD/MM/YYYY')
 dateList.fillDateArray('01/01/2025','05/01/2025')
 
 dateList.showDateArray()
+
+console.log(dateList.getOldest())
+
+console.log(dateList.getNewer())
