@@ -35,6 +35,9 @@ export class DateArray{
             if(lefDate <= rightDate){
                 this.listDates[mergedIndex] = leftSubarray[leftIndex]
                 leftIndex++
+            } else {
+                this.listDates[mergedIndex] = rightSubarray[rightIndex]
+                rightIndex++
             }
             mergedIndex++
         }
@@ -53,17 +56,18 @@ export class DateArray{
 
     }
 
-    mergeSortDate(startIndex=0,endIndex=this.listDates.length){
+    mergeSortDate(startIndex=0,endIndex=this.listDates.length - 1){
 
-        if (startIndex >= endIndex){
-            return
+        if(startIndex < endIndex){
+
+            const middleIndex = Math.floor(startIndex + (endIndex - startIndex)/2)
+
+            this.mergeSortDate(startIndex,middleIndex)
+            this.mergeSortDate(middleIndex+1, endIndex)
+
+            this.merge(startIndex, middleIndex, endIndex)
+
         }
-
-        const middleIndex = Math.floor(startIndex + (endIndex - startIndex)/2)
-
-        this.mergeSortDate(startIndex,middleIndex)
-        this.mergeSortDate(middleIndex, endIndex)
-        this.merge(startIndex, middleIndex, endIndex)
 
     }
 
