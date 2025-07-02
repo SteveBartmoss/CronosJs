@@ -1,4 +1,4 @@
-import { addDays, addMonths, calculateAge, compareDates, formatDate, getDateNow, getDayReference, getDifference, getFirstDayOfMonth, getLastDayOfMonth, getMonthName, getUnitDifference, getWeekRange, isDateInRange, isValidDate, timestampToDate, toTimestamp, unitDateConvert, unitTimeConvert } from "./cronos/cronos.js";
+import { addDays, addMonths, calculateAge, compareDates, DateArray, formatDate, getDateNow, getDayReference, getDifference, getFirstDayOfMonth, getLastDayOfMonth, getMonthName, getUnitDifference, getWeekRange, isDateInRange, isValidDate, timestampToDate, toTimestamp, unitDateConvert, unitTimeConvert } from "./cronos/cronos.js";
 
 //console.log(getDateNow('SQL'))
 
@@ -64,3 +64,9 @@ console.log(unitDateConvert(1,'weeks','days'))
 console.log(unitDateConvert(1,'months','days'))
 
 console.log(unitDateConvert(1,'quarters','days'))
+
+const dateList = new DateArray([],'DD/MM/YYYY')
+
+dateList.fillDateArray('01/01/2025','05/01/2025')
+
+dateList.showDateArray()
