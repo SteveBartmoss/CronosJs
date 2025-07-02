@@ -65,6 +65,9 @@ console.log(unitDateConvert(1,'months','days'))
 
 console.log(unitDateConvert(1,'quarters','days'))
 
+
+//Pruebas del objeto dateArray
+
 const dateList = new DateArray([],'DD/MM/YYYY')
 
 dateList.fillDateArray('01/01/2025','05/01/2025')
@@ -74,3 +77,11 @@ dateList.showDateArray()
 console.log(dateList.getOldest())
 
 console.log(dateList.getNewer())
+
+console.log(dateList.getDaysOfArray())
+
+const orderList = new DateArray(['22/01/2025','04/01/2025','01/01/2025','14/01/2025'],'DD/MM/YYYY')
+
+orderList.mergeSortDate()
+
+orderList.showDateArray()
