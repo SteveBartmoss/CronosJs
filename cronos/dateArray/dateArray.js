@@ -94,7 +94,7 @@ export class DateArray{
 
     getOldest(){
 
-        if(this.listDates){
+        if(this.listDates.length<=0){
             return null
         }
 
