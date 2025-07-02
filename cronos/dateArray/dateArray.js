@@ -115,7 +115,7 @@ export class DateArray{
 
     getNewer(){
 
-        if(this.listDates){
+        if(this.listDates.length<=0){
             return null
         }
 
@@ -130,6 +130,8 @@ export class DateArray{
             }
             
         })
+
+        return max
     }
 
     getDaysOfArray(){
