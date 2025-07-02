@@ -76,15 +76,15 @@ export class DateArray{
 
     fillDateArray(start,end){
 
-        let dateStart = Date(DateUtils.normalizeDate(start,this.format))
-        let dateEnd = Date(DateUtils.normalizeDate(end,this.format))
+        let dateStart = new Date(DateUtils.normalizeDate(start,this.format))
+        let dateEnd = new Date(DateUtils.normalizeDate(end,this.format))
 
         let currentDate = dateStart
 
-        while(currentDate<dateEnd){
+        while(currentDate<dateEnd){ 
             this.listDates.push(DateUtils.formatDate(currentDate,this.format))
 
-            currentDate = Date(currentDate.getTime() + (24*60*60*1000))
+            currentDate = new Date(currentDate.getTime() + (24*60*60*1000))
 
         }
 
