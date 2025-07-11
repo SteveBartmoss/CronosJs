@@ -19,7 +19,7 @@ export class DateUtils {
         "hh:mm": [0, 1, 2],
     }
 
-    processDate(dateToProcess, format) {
+    static #processDate(dateToProcess, format) {
 
         const parts = dateToProcess.split(/[-\/]/)
 
@@ -47,7 +47,7 @@ export class DateUtils {
                 [month, day] = [b, a]
         }
 
-        const refactorDate = `${year}-${String(mont).padStart(2, "0")}-${String(day).padStart(2, "0")}`
+        const refactorDate = `${year}-${String(month).padStart(2, "0")}-${String(day).padStart(2, "0")}`
 
         if (isNaN(Date.parse(refactorDate))) {
             throw new Error("Invalid date")
@@ -63,7 +63,7 @@ export class DateUtils {
 
     static normalizeDate(date, format = null) {
 
-        return processDate(date,format)
+        return this.#processDate(date,format)
         
     }
 
