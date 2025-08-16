@@ -1,6 +1,10 @@
 //prototipo para normalizacion de las fechas
 
 import { DateUtils } from "./utils/dateUtils.js"
+import { calculateRelativeTime } from "./utils/generalUtils.js"
+import { DateArray } from "./dateArray/dateArray.js"
+
+export {DateArray}
 
 export function getDateNow(formatDate) {
 
@@ -274,4 +278,128 @@ export function timestampToDate(timestamp, unit){
 
     const ms = unit === "seconds" ? timestamp * 1000 : timestamp
     return new Date(ms)
+}
+
+export function unitTimeConvert(unit,typeOne,typeTwo){
+    
+    const timeUnits = {
+        milliseconds: 1,
+        seconds: 1000,
+        minutes: 1000 * 60,
+        hours: 1000 * 60 * 60
+    }
+
+    return unit * (timeUnits[typeOne]/timeUnits[typeTwo])
+
+}
+
+export function unitDateConvert(unit,typeOne,typeTwo){
+
+    const dateUnits = {
+        days: 1,
+        weeks: 7,
+        months: 30.4375,
+        quarters: 91.3125,
+        years: 365.25
+    }
+
+    return unit * (dateUnits[typeOne]/dateUnits[typeTwo])
+
+}
+
+export function dateAddTime(date,format,unit,typeUnit){
+
+    let objDate = new Date(DateUtils.normalizeDate(date,format))
+
+    const timeUnits = {
+        milliseconds: 1,
+        seconds: 1000,
+        minutes: 100 * 60,
+        hours: 1000 * 60 * 60,
+        days: 24 * 1000 * 60 * 60,
+    }
+    
+    let newDate = new Date(objDate)
+
+    if(typeUnit in timeUnits){
+        newDate.setTime(newDate.getTime() + unit * timeUnits[typeUnit])
+    }
+    else if(typeUnit === "months"){
+        newDate.setMonth(newDate.getMonth() + unit)
+    }
+    else if(typeUnit === "years"){
+        newDate.setFullYear(newDate.getFullYear() + unit)
+    }
+
+    return DateUtils.normalizeDate(newDate,format)
+
+}
+
+export function getElapsedTimne(firstDate,secondDate,firstFormat,secondFormat){
+
+    const objFirst = new Date(DateUtils.normalizeDate(firstDate,firstFormat))
+    const objSecond = new Date(DateUtils.normalizeDate(secondDate,secondFormat))
+
+    let diference = objSecond - objFirst
+
+    return calculateRelativeTime(diference)
+
+}
+
+export function compareRightnow(date,format){
+
+    const objDate = new Date(DateUtils.normalizeDate(date,format))
+    const dateNow = new Date()
+
+    if(objDate>dateNow) 1
+    if(objDate<dateNow) -1
+    return 0
+
+}
+
+
+export function getMax(arrayDates, format){
+
+    if(arrayDates.length === 0){
+        return null
+    }
+
+    let max = arrayDates[0]
+
+    arrayDates.forEach((element)=>{
+        const currentDate = new Date(DateUtils.normalizeDate(element,format))
+        const maxDate = new Date(DateUtils.normalizeDate(max,format))
+
+        if(currentDate > maxDate){
+            max = element
+        }
+
+    })
+
+    return max
+
+}
+
+export function getMin(arrayDates, format){
+
+
+    if(arrayDates.length === 0){
+      return null
+    }
+  
+    let min = arrayDates[0]
+  
+    arrayDates.forEach((element)=>{
+      
+      const currentDate = new Date(DateUtils.normalizeDate(element,format))
+      const minDate = new Date(DateUtils.normalizeDate(min,format))
+  
+      if(currentDate < minDate){
+        min = element
+      }
+  
+    })
+  
+    return min
+    
 }

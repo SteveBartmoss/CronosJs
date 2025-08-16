@@ -1,4 +1,4 @@
-# CronosJs 1.20.24 (Alfa)
+# CronosJs 1.21.26 (Alfa)
 
 - [Documentacion espanol](#ES)
 - [Documentacion ingles](#EN)
@@ -559,6 +559,105 @@ Las unidades de tiempo aceptadas son:
 ### Retorno
 
 Regresa el valor numerico en la nueva unidad de tiempo
+
+## Estructuras de datos
+
+### DateArray
+
+Esta clase representa un arreglo de fechas, en el cual se tienen diferentes funciones para operar con las fechas que estan dentro del arreglo. A continuacion se muestran las funciones
+
+### mergeSortDate
+
+Esta funcion ordene de forma descendente las fechas que tiene el arreglo, no recibe ningun parametro de momento y se usa sobre una instancia de DateArrat
+
+```js
+    const dateList = new DateArray([],'DD/MM/YYYY')
+
+    dateList.mergeSortDate()
+```
+
+### Retorno
+
+La funcion trabaja sobre el mismo arreglo que se definio asi que no regresa ningun valor, simplemente afecta el arreglo sobre el que se llama
+
+### showArray 
+
+Esta funcion simplemente imprime uno por uno los elementos del arreglo, lo utilizo siempre que realizo pruebas para esta clase pero puede ser util, al igual que la funcion anterior se llama sobre la misma instancia
+
+```js
+    const dateList = new DateArray([],'DD/MM/YYYY')
+
+    dateList.showDateArray()
+```
+
+### Retorno
+
+La funcion trabaja sobre el mismo arreglo que se definio asi que no regresa ningun valor, simplemente imprime el arreglo
+
+### fillDateArray
+
+Esta funcion llena una instancia de DateArray tomando una fecha de inicio y fin, los incrementos entre fechas son de un dia
+
+
+```js
+    const dateList = new DateArray([],'DD/MM/YYYY')
+
+    dateList.fillDateArray(start,end)
+```
+
+### Parametros
+
+**start**
+- Fecha inicio para llenar el arreglo
+
+**end**
+- Fecha final para llenar el arreglo
+
+### Retorno
+
+La funcion trabaja sobre el mismo arreglo que se definio asi que no regresa ningun valor, simplemente regresa un arreglo que ya se habia instanciado previamente
+
+### getOldest
+
+Esta funcion regrea la fecha mas antigua que existe en un arreglo de tipo DataArray
+
+```js
+    const dateList = new DateArray([],'DD/MM/YYYY')
+
+    let old = dateList.getOldest()
+```
+
+### Retorno
+
+La funcion regresa la fecha en el mismo formato que se esta trabajando en el arreglo de fechas
+
+### getNewer
+
+Esta funcion regrea la fecha mas reciente que existe en un arreglo de tipo DataArray
+
+```js
+    const dateList = new DateArray([],'DD/MM/YYYY')
+
+    let newer = dateList.getNewer()
+```
+
+### Retorno
+
+La funcion regresa la fecha en el mismo formato que se esta trabajando en el arreglo de fechas
+
+### getDaysOfArray
+
+Esta funcion regresa el numero de dias que existe entre la fecha mas reciente y la mas antigua
+
+```js
+    const dateList = new DateArray([],'DD/MM/YYYY')
+
+    let days = dateList.getDaysOfArray()
+```
+
+### Retorno
+
+La funcion regresa el nuermo de dias que representra la diferencia entre la fecha mas antifua y la mas reciente
 
 ## EN
 
