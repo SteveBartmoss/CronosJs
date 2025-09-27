@@ -1,4 +1,5 @@
 import { addDays, addMonths, calculateAge, compareDates, DateArray, formatDate, getDateNow, getDayReference, getDifference, getFirstDayOfMonth, getLastDayOfMonth, getMonthName, getUnitDifference, getWeekRange, isDateInRange, isValidDate, timestampToDate, toTimestamp, unitDateConvert, unitTimeConvert } from "./cronos/cronos.js";
+import { DateObject } from "./cronos/dateObject/dateObject.js";
 
 //console.log(getDateNow('SQL'))
 
@@ -85,3 +86,9 @@ const orderList = new DateArray(['22/01/2025','04/01/2025','01/01/2025','14/01/2
 orderList.mergeSortDate()
 
 orderList.showDateArray()
+
+const dateObj = new DateObject('01/01/2025','DD/MM/YYYY','01:01')
+
+console.log(dateObj.getDateString())
+console.log(dateObj.getFormat())
+console.log(dateObj.getTime())
