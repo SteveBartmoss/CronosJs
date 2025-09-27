@@ -1,7 +1,7 @@
 //prototipo para normalizacion de las fechas
 
 import { DateUtils } from "./utils/dateUtils.js"
-import { calculateRelativeTime } from "./utils/generalUtils.js"
+//import { calculateRelativeTime } from "./utils/generalUtils.js"
 import { DateArray } from "./dateArray/dateArray.js"
 
 export {DateArray}
@@ -342,7 +342,7 @@ export function getElapsedTimne(firstDate,secondDate,firstFormat,secondFormat){
 
     let diference = objSecond - objFirst
 
-    return calculateRelativeTime(diference)
+    return DateUtils.calculateRelativeTime(diference)
 
 }
 
