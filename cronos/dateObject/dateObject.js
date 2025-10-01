@@ -1,3 +1,4 @@
+import { DateUtils } from "../utils/dateUtils"
 
 
 export class DateObject{
@@ -7,6 +8,8 @@ export class DateObject{
         this.format = format
         this.time = time
         this.dateJs = null
+
+        this.#buildDate()
     }
 
     setDateString(date){
@@ -37,5 +40,8 @@ export class DateObject{
         return this.dateJs
     }
 
+    #buildDate(){
+        this.dateJs = new Date(DateUtils.normalizeDate(this.dateString,this.format))
+    }
     
 }
