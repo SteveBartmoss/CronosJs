@@ -1,6 +1,6 @@
 {
   "name": "@stevebartmoss/cronosjs",
-  "version": "1.21.26",
+  "version": "1.21.27",
   "description": "Libreria para trabajar con fechas",
   "main": "cronos/cronos.js",
   "type": "module",
@@ -9,7 +9,7 @@
   },
   "author": "Steve",
   "license": "GPL-3.0",
-  "repository":{
+  "repository": {
     "type": "git",
     "url": "https://github.com/SteveBartmoss/CronosJs"
   },
