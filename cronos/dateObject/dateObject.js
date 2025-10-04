@@ -1,3 +1,4 @@
+import { DateUtils } from "../utils/dateUtils.js"
 
 
 export class DateObject{
@@ -6,35 +7,13 @@ export class DateObject{
         this.dateString = dateString
         this.format = format
         this.time = time
-        this.dateJs = null
+        this.setDateJs
     }
 
-    setDateString(date){
-        this.dateString = date
-    }
+    setDateJs(){
+        
+        this.dateJs = new Date(DateUtils.normalizeDate(this.dateString,this.format))
 
-    setFormat(format){
-        this.format = format
-    }
-
-    setTime(time){
-        this.time = time
-    }
-
-    getDateString(){
-        return this.dateString
-    }
-
-    getFormat(){
-        return this.format
-    }
-
-    getTime(){
-        return this.time
-    }
-
-    getDateJs(){
-        return this.dateJs
     }
 
     
