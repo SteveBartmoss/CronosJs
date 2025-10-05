@@ -26,4 +26,11 @@ export class DateObject{
 
     }
 
+    addDays(days){
+
+        this.dateJs = new Date(this.dateJs.getTime() + (days*24*60*60*1000))
+        
+    }
+
+    
 }
