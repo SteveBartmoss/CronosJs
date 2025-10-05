@@ -19,7 +19,7 @@ export class DateUtils {
         "hh:mm": [0, 1, 2],
     }
 
-    static #processDate(dateToProcess, format) {
+    static #processDate(dateToProcess, format, time ) {
 
         const parts = dateToProcess.split(/[-\/]/)
 
@@ -61,9 +61,9 @@ export class DateUtils {
 
     }
 
-    static normalizeDate(date, format = null) {
+    static normalizeDate(date, format = null, time) {
 
-        return this.#processDate(date,format)
+        return this.#processDate(date,format,time)
         
     }
 
