@@ -16,24 +16,14 @@ export class DateObject{
 
     }
 
-    getDifference(date,format){
-        if(date instanceof DateObject){
-            let difference = this.dateJs - date.dateJs
-            difference = difference / (1000 * 60 * 60 * 24)
+    getDifferenceInDays(date,format){
 
-            return Math.round(difference)
-        }
+        let compareDate = date instanceof DateObject ? date : new Date(DateUtils.normalizeDate(date,format))
 
+        const diference = this.dateJs - compareDate
 
-        let swapDate = new Date(DateUtils.normalizeDate(date,format))
-
-        let diference = this.dateJs - swapDate
-
-        diference = diference / (1000 * 60 * 60 * 24)
-
-        return Math.round(diference)
+        return Math.round(diference/(1000 * 60 * 60 * 24))
 
     }
 
-    
 }
