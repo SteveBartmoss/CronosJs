@@ -32,5 +32,8 @@ export class DateObject{
         
     }
 
+    #buildDate(){
+        this.dateJs = new Date(DateUtils.normalizeDate(this.dateString,this.format))
+    }
     
 }
