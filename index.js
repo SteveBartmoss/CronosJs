@@ -87,8 +87,17 @@ orderList.mergeSortDate()
 
 orderList.showDateArray()
 
-const dateObj = new DateObject('01/01/2025','DD/MM/YYYY','01:01')
+console.log('\n Pruebas de objetos------ \n')
 
-console.log(dateObj.getDateString())
-console.log(dateObj.getFormat())
-console.log(dateObj.getTime())
+const dateObj = new DateObject('10/01/2025','DD/MM/YYYY','01:01')
+const dateObj2 = new DateObject('05/01/2025','DD/MM/YYYY','01:01')
+//dateObj.setDateJs()
+//dateObj2.setDateJs()
+
+console.log(dateObj.dateString)
+console.log(dateObj.format)
+console.log(dateObj.time)
+console.log(dateObj.dateJs)
+
+console.log(dateObj.getDifferenceInDays('05/01/2025','DD/MM/YYYY'))
+console.log(dateObj.getDifferenceInDays(dateObj2))
