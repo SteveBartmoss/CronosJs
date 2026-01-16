@@ -13,10 +13,10 @@ export class DateUtils {
     }
 
     static formatMapTime = {
-        "h:mm:ss m": [0, 1, 2],
-        "hh:mm m": [0, 1],
-        "hh:mm:ss": [0, 1, 2],
-        "hh:mm": [0, 1, 2],
+        "HH:mm:ss": [0, 1, 2],
+        "HH:mm": [0, 1],
+        "hh:mm:ss a": [0, 1, 2],
+        "hh:mm a": [0, 1],
     }
 
     static #processDate(dateToProcess, format, time ) {
