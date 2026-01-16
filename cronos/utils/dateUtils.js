@@ -19,7 +19,7 @@ export class DateUtils {
         "hh:mm a": [0, 1],
     }
 
-    static #processDate(dateToProcess, format, time ) {
+    static #processDate(dateToProcess, format ) {
 
         const parts = dateToProcess.split(/[-\/]/)
 
@@ -57,7 +57,7 @@ export class DateUtils {
 
     }
 
-    processTime(timeToProcess, format) {
+    static #processTime(timeToProcess, format) {
 
         if(!timeToProcess){
             return "00:00:00"
@@ -83,12 +83,15 @@ export class DateUtils {
         }
 
         return `${String(h).padStart(2,"0")}:${String(m).padStart(2,"0")}:${String(s).padStart(2,"0")}`
-        
+
     }
 
-    static normalizeDate(date, format = null, time) {
+    static normalizeDate(date, format = null, time=null) {
 
-        return this.#processDate(date,format,time)
+        const normalizeDate = this.#processDate(date,format)
+        const normalizeTime = this.#processTime(time)
+
+        return `${normalizeDate} ${normalizeTime}`
         
     }
 
