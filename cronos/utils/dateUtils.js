@@ -59,6 +59,31 @@ export class DateUtils {
 
     processTime(timeToProcess, format) {
 
+        if(!timeToProcess){
+            return "00:00:00"
+        }
+
+        const isPm = /pm/i.test(timeToProcess)
+        const isAm = /am/i.test(timeToProcess)
+
+        const cleanTime = timeToProcess.replace(/am|pm/i, "").trim()
+        const parts = cleanTime.split(":")
+
+        if(parts.length < 2 || parts.length > 3){
+            throw new Error("Invalid time format")
+        }
+
+        let [h,m,s="00"] = parts.map(Number)
+        
+        if(isPm && h < 12) h+= 12
+        if(isAm && h === 12 ) h = 0
+
+        if(h > 23 || m > 59 || s > 59){
+            throw new Error("Invalid time value")
+        }
+
+        return `${String(h).padStart(2,"0")}:${String(m).padStart(2,"0")}:${String(s).padStart(2,"0")}`
+        
     }
 
     static normalizeDate(date, format = null, time) {
